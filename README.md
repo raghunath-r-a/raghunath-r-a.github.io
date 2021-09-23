@@ -10,7 +10,7 @@ All of this is not to say that writing is an easy endeavor, but the passion for 
 
 Recently, I have discovered that I tend to be a perfectionist about most things I pursue: I have experienced the pros and cons of it. The key is how I channel my perfectionist tendencies to get the best results, though it's neither simple nor easy. 
 
-I try new things from time to time, expand my knowledge and build new skills.
+I try new things from time to time, expand my knowledge, and build new skills.
 
 Even though I have a degree in computer science, I never got serious about programming. But all this education is not for nothing. It helps me understand technical concepts better and consequently write better.
 
