@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: default
 title:  "Welcome to Jekyll!"
+date: 2023-11-14
 ---
 
 # Welcome
