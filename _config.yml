@@ -1,9 +1,7 @@
 theme: minima
 
-plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
-
 title: Raghunath Reddy
 author:
   name: Raghunath Reddy
   email: "raghu.qfaqv@passfwd.com"
+description: "Technical Content Writer, Editor, and Product Marketer"
