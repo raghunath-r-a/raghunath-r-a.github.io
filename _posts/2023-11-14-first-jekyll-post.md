@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "Welcome to Jekyll!"
 date: 2023-11-14
 excerpt: "This is my first Jekyll blog post."
