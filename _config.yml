@@ -15,4 +15,4 @@ plugins:
   - jekyll-paginate
 
 paginate: 5 # number of posts per page
-paginate_path: "/page:num/" # path for the paginated pages
+# paginate_path: "/page:num/" # path for the paginated pages
