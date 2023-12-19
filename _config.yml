@@ -1,14 +1,13 @@
 theme: minima
 
+plugins:
+- jekyll-remote-theme # add this line to the plugins list if you already have one
+- jekyll-paginate
+paginate: 5
+
 title: Raghunath Reddy
 author:
   name: "Raghunath Reddy"
   email: "raghu.qfaqv@passfwd.com"
 description: Content Editor, Technical Content Writer, and Product Marketer
-
-
-plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
-- jekyll-paginate
-paginate: 5
 
