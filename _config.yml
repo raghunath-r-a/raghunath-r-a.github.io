@@ -10,3 +10,9 @@ author:
   name: Raghunath Reddy
   email: "raghu.qfaqv@passfwd.com"
 description: "Technical Content Writer, Editor, and Product Marketer"
+
+plugins:
+  - jekyll-paginate
+
+paginate: 5 # number of posts per page
+paginate_path: "/page:num/" # path for the paginated pages
