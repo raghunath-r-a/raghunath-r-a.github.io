@@ -5,3 +5,7 @@ author:
   name: Raghunath Reddy
   email: "raghu.qfaqv@passfwd.com"
 description: "Technical Content Writer, Editor, and Product Marketer"
+
+minima:
+  skin: solarized-light
+  
