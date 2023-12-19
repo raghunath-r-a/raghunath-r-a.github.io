@@ -11,3 +11,8 @@ __Thought Leadership Article 2__: [The CTO’s Role In Product Growth](https://w
 __Blog Post 1__: [What is Risk-Based Authentication? And Why Should You Implement It?](https://www.loginradius.com/blog/engineering/risk-based-authentication/)
 
 __Blog Post 2__: [One Vision, Many Paths: How We’re Supporting freeCodeCamp](https://www.loginradius.com/blog/engineering/loginradius-sponsorship-freecodecamp/)
+
+{% for post in paginator.posts %}
+  <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+  <p>{{ post.excerpt }}</p>
+{% endfor %}
