@@ -1,4 +1,5 @@
-### My Professional Works
+
+## My Professional Works
 
 __eBook 1__: [Data Privacy: What Enterprises Need to Know?](https://books2read.com/u/3k2eyK) 
 
@@ -12,7 +13,7 @@ __Blog Post 1__: [What is Risk-Based Authentication? And Why Should You Implemen
 
 __Blog Post 2__: [One Vision, Many Paths: How We’re Supporting freeCodeCamp](https://www.loginradius.com/blog/engineering/loginradius-sponsorship-freecodecamp/)
 
-### Personal Blog Posts
+## Personal Blog Posts
 
 The following are the blog posts in which I express my opinions.
 
