@@ -16,4 +16,19 @@ __Blog Post 2__: [One Vision, Many Paths: How We’re Supporting freeCodeCamp](h
 ## Personal Blog Posts
 
 The following are the blog posts in which I express my opinions.
-
+    
+    {% paginate 5 %}
+    <div class="recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+        {% for post in paginator.posts %}
+            <li>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            {% if post.excerpt %}
+                <p>{{ post.excerpt }}</p>
+            {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endpaginate %}

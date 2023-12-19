@@ -43,24 +43,6 @@
 
       {{ content }}
 
-            <!-- additional custom html starts here-->
-        
-        {% paginate 5 %}
-        <div class="recent-posts">
-            <h2>Recent Posts</h2>
-            <ul>
-            {% for post in paginator.posts %}
-                <li>
-                <a href="{{ post.url }}">{{ post.title }}</a>
-                {% if post.excerpt %}
-                    <p>{{ post.excerpt }}</p>
-                {% endif %}
-                </li>
-            {% endfor %}
-            </ul>
-        </div>
-        {% endpaginate %}
-
       </section>
       <footer>
         {% if site.github.is_project_page %}
@@ -71,8 +53,4 @@
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
   </body>
-
-  
-
-
 </html>
