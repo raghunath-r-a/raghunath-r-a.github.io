@@ -1,4 +1,4 @@
-The following are some of the titles I have worked on:
+### My Professional Works
 
 __eBook 1__: [Data Privacy: What Enterprises Need to Know?](https://books2read.com/u/3k2eyK) 
 
@@ -11,6 +11,8 @@ __Thought Leadership Article 2__: [The CTO’s Role In Product Growth](https://w
 __Blog Post 1__: [What is Risk-Based Authentication? And Why Should You Implement It?](https://www.loginradius.com/blog/engineering/risk-based-authentication/)
 
 __Blog Post 2__: [One Vision, Many Paths: How We’re Supporting freeCodeCamp](https://www.loginradius.com/blog/engineering/loginradius-sponsorship-freecodecamp/)
+
+### Personal Blog Posts
 
 The following are the blog posts in which I express my opinions.
 
