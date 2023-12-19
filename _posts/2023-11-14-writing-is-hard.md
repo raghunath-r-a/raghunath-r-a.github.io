@@ -3,7 +3,7 @@ layout: post
 title:  "Writing is Hard. Why?"
 author: Raghunath Reddy
 date: 2023-12-19
-tags: "writing", "fiction", "non-fiction",
+tags: ["writing", "fiction", "non-fiction"]
 ---
 
 Writing is hard not because a writer's job is merely to use the language in the written form but because the writer shall use the language creatively to put forth something interesting, insightful, engaging, and noteworthy.
