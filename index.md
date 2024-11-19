@@ -1,5 +1,5 @@
 
-## My Professional Works
+## Professional Works
 
 __eBook 1__: [Data Privacy: What Enterprises Need to Know?](https://books2read.com/u/3k2eyK) 
 
@@ -14,8 +14,6 @@ __Blog Post 1__: [What is Risk-Based Authentication? And Why Should You Implemen
 __Blog Post 2__: [How Chrome’s Third-Party Cookie Restrictions Affect User Authentication?](https://www.loginradius.com/blog/engineering/identity-impact-of-google-chrome-thirdparty-cookie-restrictions/)
 
 ## Blog Posts
-
-The following are the blog posts in which I express my opinions.
     
 <ul>
   {% for post in site.posts | limit:5 %}
