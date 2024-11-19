@@ -13,7 +13,7 @@ __Blog Post 1__: [What is Risk-Based Authentication? And Why Should You Implemen
 
 __Blog Post 2__: [How Chrome’s Third-Party Cookie Restrictions Affect User Authentication?](https://www.loginradius.com/blog/engineering/identity-impact-of-google-chrome-thirdparty-cookie-restrictions/)
 
-<!-- ## Personal Blog Posts
+## Blog Posts
 
 The following are the blog posts in which I express my opinions.
     
@@ -21,4 +21,4 @@ The following are the blog posts in which I express my opinions.
   {% for post in site.posts | limit:5 %}
     <li><a href="{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
-</ul> -->
+</ul>
