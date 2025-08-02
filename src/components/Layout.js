@@ -8,9 +8,9 @@ const Layout = ({ children, isHomePage = false }) => {
     left: 0,
     right: 0,
     zIndex: 1000,
-    background: 'rgba(255, 255, 255, 0.95)',
+    background: 'var(--color-bg-overlay)',
     backdropFilter: 'blur(10px)',
-    borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
+    borderBottom: '1px solid rgba(251, 191, 36, 0.3)',
     padding: '1rem 0',
     transition: 'all 0.3s ease'
   }
@@ -25,31 +25,33 @@ const Layout = ({ children, isHomePage = false }) => {
   }
 
   const logoStyle = {
-    fontSize: '1.5rem',
-    fontWeight: '700',
-    fontFamily: 'Playfair Display, serif',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    fontSize: 'var(--font-size-2xl)',
+    fontWeight: '600',
+    fontFamily: 'var(--font-serif)',
+    background: 'linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
-    textDecoration: 'none'
+    textDecoration: 'none',
+    lineHeight: 'var(--line-height-tight)'
   }
 
   const navLinksStyle = {
     display: 'flex',
     gap: '2rem',
-    alignItems: 'center'
+    alignItems: 'center',
+    className: 'nav-links'
   }
 
   const navLinkStyle = {
     textDecoration: 'none',
-    color: '#333',
+    color: 'var(--color-text-primary)',
     fontWeight: '500',
-    fontSize: '0.95rem',
+    fontSize: 'var(--font-size-base)',
+    fontFamily: 'var(--font-sans)',
     position: 'relative',
     transition: 'color 0.3s ease',
-    ':hover': {
-      color: '#667eea'
-    }
+    padding: '0.5rem 0',
+    lineHeight: 'var(--line-height-normal)'
   }
 
   const mainStyle = {
@@ -58,12 +60,12 @@ const Layout = ({ children, isHomePage = false }) => {
   }
 
   const footerStyle = {
-    background: 'rgba(255, 255, 255, 0.1)',
+    background: 'var(--color-bg-secondary)',
     backdropFilter: 'blur(10px)',
     padding: '3rem 0 2rem',
     textAlign: 'center',
-    borderTop: '1px solid rgba(255, 255, 255, 0.2)',
-    color: 'rgba(255, 255, 255, 0.8)'
+    borderTop: '1px solid rgba(251, 191, 36, 0.3)',
+    color: 'var(--color-text-secondary)'
   }
 
   const footerContentStyle = {
@@ -91,11 +93,21 @@ const Layout = ({ children, isHomePage = false }) => {
       
       <footer style={footerStyle}>
         <div style={footerContentStyle}>
-          <p style={{ fontSize: '0.9rem', marginBottom: '1rem' }}>
-            Crafting stories and building digital experiences
+          <p style={{ 
+            fontSize: 'var(--font-size-lg)', 
+            marginBottom: '1rem',
+            lineHeight: 'var(--line-height-relaxed)',
+            fontFamily: 'var(--font-sans)'
+          }}>
+            Securing healthcare through strategic cybersecurity program management
           </p>
-          <p style={{ fontSize: '0.8rem', opacity: 0.7 }}>
-            &copy; 2024 Raghunath Reddy. All rights reserved.
+          <p style={{ 
+            fontSize: 'var(--font-size-sm)', 
+            opacity: 0.8,
+            lineHeight: 'var(--line-height-normal)',
+            fontFamily: 'var(--font-sans)'
+          }}>
+            &copy; 2025 Raghunath Reddy
           </p>
         </div>
       </footer>

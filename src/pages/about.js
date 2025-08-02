@@ -3,10 +3,10 @@ import Layout from "../components/Layout"
 
 const AboutPage = () => {
   const heroStyle = {
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    background: 'linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%)',
     padding: '8rem 0 6rem',
     textAlign: 'center',
-    color: 'white'
+    color: 'var(--color-text-primary)'
   }
 
   const containerStyle = {
@@ -16,24 +16,27 @@ const AboutPage = () => {
   }
 
   const titleStyle = {
-    fontSize: 'clamp(3rem, 6vw, 4.5rem)',
-    fontFamily: 'Playfair Display, serif',
-    fontWeight: '700',
+    fontSize: 'clamp(var(--font-size-4xl), 6vw, var(--font-size-5xl))',
+    fontFamily: 'var(--font-serif)',
+    fontWeight: '600',
     marginBottom: '1.5rem',
-    lineHeight: '1.1'
+    lineHeight: 'var(--line-height-tight)',
+    letterSpacing: '-0.02em'
   }
 
   const subtitleStyle = {
-    fontSize: 'clamp(1.2rem, 3vw, 1.6rem)',
-    opacity: 0.9,
-    fontWeight: '300',
+    fontSize: 'clamp(var(--font-size-lg), 3vw, var(--font-size-xl))',
+    opacity: 0.95,
+    fontWeight: '400',
+    fontFamily: 'var(--font-sans)',
+    lineHeight: 'var(--line-height-relaxed)',
     maxWidth: '600px',
     margin: '0 auto'
   }
 
   const sectionStyle = {
     padding: '6rem 0',
-    background: 'white'
+    background: 'var(--color-bg-primary)'
   }
 
   const contentGridStyle = {
@@ -44,9 +47,10 @@ const AboutPage = () => {
   }
 
   const textContentStyle = {
-    fontSize: '1.1rem',
-    lineHeight: '1.8',
-    color: '#555'
+    fontSize: 'var(--font-size-lg)',
+    lineHeight: 'var(--line-height-loose)',
+    color: 'var(--color-text-secondary)',
+    fontFamily: 'var(--font-sans)'
   }
 
   const highlightStyle = {
@@ -64,11 +68,11 @@ const AboutPage = () => {
   }
 
   const skillCardStyle = {
-    background: 'linear-gradient(145deg, #f8f9ff 0%, #fff 100%)',
+    background: 'var(--color-bg-card)',
     borderRadius: '15px',
     padding: '2rem',
-    boxShadow: '0 10px 30px rgba(102, 126, 234, 0.1)',
-    border: '1px solid rgba(102, 126, 234, 0.1)',
+    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+    border: '1px solid rgba(251, 191, 36, 0.2)',
     textAlign: 'center',
     transition: 'transform 0.3s ease'
   }
@@ -76,47 +80,53 @@ const AboutPage = () => {
   const skillIconStyle = {
     width: '60px',
     height: '60px',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    background: 'linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%)',
     borderRadius: '50%',
     margin: '0 auto 1rem',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: '1.5rem',
-    color: 'white'
+    fontSize: '0.9rem',
+    fontWeight: '700',
+    color: '#0f172a',
+    fontFamily: 'var(--font-sans)'
   }
 
   const sectionTitleStyle = {
-    fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
-    fontFamily: 'Playfair Display, serif',
+    fontSize: 'clamp(var(--font-size-3xl), 5vw, var(--font-size-4xl))',
+    fontFamily: 'var(--font-serif)',
     fontWeight: '600',
     textAlign: 'center',
     marginBottom: '3rem',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    background: 'linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent'
   }
 
   const skills = [
     {
-      icon: "✍️",
-      title: "Content Writing",
-      description: "Crafting compelling technical content that bridges complex concepts with clear communication."
+      title: "Program Management",
+      description: "Leading cross-functional cybersecurity initiatives with strategic planning and execution excellence."
     },
     {
-      icon: "📝",
-      title: "Editorial Excellence", 
-      description: "Polishing content to perfection with keen attention to detail and storytelling prowess."
+      title: "Content Management", 
+      description: "Developing and managing security documentation, policies, and communication strategies for enterprise environments."
     },
     {
-      icon: "📈",
-      title: "Product Marketing",
-      description: "Strategic marketing approaches that drive engagement and convert audiences into advocates."
+      title: "CyberSecurity Programs",
+      description: "Supporting cybersecurity initiatives through strategic content development and cross-functional collaboration."
     },
     {
-      icon: "🔒",
-      title: "Security Expertise",
-      description: "Deep understanding of cybersecurity, identity management, and data privacy landscapes."
+      title: "Business Presentations",
+      description: "PowerPoint skills for creating compelling business presentations and strategic communications."
+    },
+    {
+      title: "Design & Prototyping",
+      description: "Intermediate Figma skills for creating user interfaces, prototypes, and design documentation."
+    },
+    {
+      title: "AI-Assisted Development",
+      description: "Leveraging AI tools for coding, LangChain development, and Python scripting automation."
     }
   ]
 
@@ -127,7 +137,7 @@ const AboutPage = () => {
         <div style={containerStyle}>
           <h1 style={titleStyle} className="fade-in-up">About Me</h1>
           <p style={subtitleStyle} className="fade-in-up">
-            Passionate storyteller bridging the gap between technology and human understanding
+            Leading cybersecurity initiatives through strategic content management and program excellence
           </p>
         </div>
       </section>
@@ -142,38 +152,51 @@ const AboutPage = () => {
               </h2>
               <div style={textContentStyle}>
                 <p style={{marginBottom: '1.5rem'}}>
-                  In the ever-evolving landscape of technology, I've found my calling as a 
-                  <span style={highlightStyle}> bridge between complex innovations and clear communication</span>. 
-                  With years of experience in technical content creation, I specialize in transforming 
-                  intricate concepts into compelling narratives that resonate with diverse audiences.
+                  Currently serving as a Program Manager in the 
+                  <span style={highlightStyle}> CyberSecurity division of a leading Healthcare Company</span>, 
+                  I focus on strategic content management initiatives that strengthen our security posture. 
+                  My role bridges technical cybersecurity expertise with effective communication strategies.
                 </p>
                 <p style={{marginBottom: '1.5rem'}}>
-                  My journey has taken me from deep dives into cybersecurity frameworks to crafting 
-                  <span style={highlightStyle}> thought leadership pieces for Forbes</span>, always with 
-                  the goal of making technology accessible and actionable for business leaders and 
-                  technical professionals alike.
+                  In cybersecurity, protecting sensitive data and critical infrastructure 
+                  requires more than just technical solutions—it demands 
+                  <span style={highlightStyle}> clear, actionable communication</span> across all organizational levels. 
+                  I develop and manage content strategies that ensure security protocols are understood, 
+                  implemented, and maintained effectively.
                 </p>
                 <p>
-                  Whether I'm authoring eBooks on data privacy, developing product marketing strategies, 
-                  or editing complex technical documentation, I bring a unique blend of 
-                  <span style={highlightStyle}> technical expertise and creative storytelling</span> 
-                  to every project.
+                  My diverse background spans technical writing, business presentations, and modern development tools. 
+                  From creating compelling PowerPoint presentations to prototyping with Figma, and leveraging 
+                  <span style={highlightStyle}> AI-assisted development tools</span> including LangChain and Python scripting, 
+                  I bring a modern, technology-forward approach to cybersecurity program management that bridges 
+                  technical excellence with clear business communication.
                 </p>
               </div>
             </div>
             
             <div className="fade-in-up" style={{
-              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+              background: 'linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%)',
               borderRadius: '20px',
               padding: '3rem',
-              color: 'white',
+              color: '#0f172a',
               textAlign: 'center'
             }}>
-              <h3 style={{fontSize: '1.8rem', marginBottom: '1.5rem', fontFamily: 'Playfair Display, serif'}}>
+              <h3 style={{
+                fontSize: 'var(--font-size-2xl)', 
+                marginBottom: '1.5rem', 
+                fontFamily: 'var(--font-serif)',
+                fontWeight: '600'
+              }}>
                 Let's Connect
               </h3>
-              <p style={{marginBottom: '2rem', opacity: 0.9}}>
-                Ready to transform your content strategy and tell your story in a way that truly resonates?
+              <p style={{
+                marginBottom: '2rem', 
+                opacity: 0.95,
+                fontSize: 'var(--font-size-lg)',
+                lineHeight: 'var(--line-height-relaxed)',
+                fontFamily: 'var(--font-sans)'
+              }}>
+                Ready to discuss cybersecurity program management or enterprise security initiatives?
               </p>
               <div style={{
                 display: 'flex',
@@ -182,25 +205,28 @@ const AboutPage = () => {
                 flexWrap: 'wrap'
               }}>
                 <a 
-                  href="mailto:contact@raghunathreddy.com"
+                  href="mailto:raghunath-r-a@getburner.email"
                   style={{
-                    padding: '0.8rem 1.5rem',
-                    background: 'rgba(255, 255, 255, 0.2)',
-                    border: '2px solid rgba(255, 255, 255, 0.3)',
+                    padding: '1rem 2rem',
+                    background: 'rgba(15, 23, 42, 0.15)',
+                    border: '2px solid rgba(15, 23, 42, 0.3)',
                     borderRadius: '25px',
-                    color: 'white',
+                    color: '#0f172a',
                     textDecoration: 'none',
-                    fontWeight: '500',
-                    transition: 'all 0.3s ease'
+                    fontWeight: '600',
+                    fontSize: 'var(--font-size-base)',
+                    fontFamily: 'var(--font-sans)',
+                    transition: 'all 0.3s ease',
+                    backdropFilter: 'blur(10px)'
                   }}
                   onMouseEnter={(e) => {
-                    e.target.style.background = 'rgba(255, 255, 255, 0.3)'
+                    e.target.style.background = 'rgba(15, 23, 42, 0.25)'
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.background = 'rgba(255, 255, 255, 0.2)'
+                    e.target.style.background = 'rgba(15, 23, 42, 0.15)'
                   }}
                 >
-                  📧 Email Me
+                  Email Me
                 </a>
               </div>
             </div>
@@ -209,7 +235,7 @@ const AboutPage = () => {
       </section>
 
       {/* Skills Section */}
-      <section style={{...sectionStyle, background: '#f8f9ff'}}>
+      <section style={{...sectionStyle, background: 'var(--color-bg-secondary)'}}>
         <div style={containerStyle}>
           <h2 style={sectionTitleStyle} className="fade-in-up">What I Do Best</h2>
           
@@ -226,17 +252,21 @@ const AboutPage = () => {
                   e.currentTarget.style.transform = 'translateY(0)'
                 }}
               >
-                <div style={skillIconStyle}>{skill.icon}</div>
                 <h3 style={{
-                  fontSize: '1.3rem',
+                  fontSize: 'var(--font-size-xl)',
                   fontWeight: '600',
                   marginBottom: '1rem',
-                  color: '#333',
-                  fontFamily: 'Playfair Display, serif'
+                  color: 'var(--color-text-primary)',
+                  fontFamily: 'var(--font-serif)'
                 }}>
                   {skill.title}
                 </h3>
-                <p style={{color: '#666', lineHeight: '1.6'}}>
+                <p style={{
+                  color: 'var(--color-text-secondary)', 
+                  lineHeight: 'var(--line-height-relaxed)',
+                  fontSize: 'var(--font-size-base)',
+                  fontFamily: 'var(--font-sans)'
+                }}>
                   {skill.description}
                 </p>
               </div>

@@ -1,5 +1,50 @@
 /* Global Styles */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  /* Typography Scale */
+  --font-size-xs: 0.75rem;     /* 12px */
+  --font-size-sm: 0.875rem;    /* 14px */
+  --font-size-base: 1rem;      /* 16px */
+  --font-size-lg: 1.125rem;    /* 18px */
+  --font-size-xl: 1.25rem;     /* 20px */
+  --font-size-2xl: 1.5rem;     /* 24px */
+  --font-size-3xl: 1.875rem;   /* 30px */
+  --font-size-4xl: 2.25rem;    /* 36px */
+  --font-size-5xl: 3rem;       /* 48px */
+  --font-size-6xl: 3.75rem;    /* 60px */
+  
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+  
+  /* Font Families */
+  --font-sans: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-serif: 'Crimson Text', Georgia, Cambria, 'Times New Roman', Times, serif;
+  
+  /* Dark Navy Theme Colors */
+  --color-primary: #0f172a;      /* Deep navy */
+  --color-secondary: #1e293b;    /* Lighter navy */
+  --color-accent: #fbbf24;       /* Warm yellow */
+  --color-accent-hover: #f59e0b; /* Deeper yellow */
+  
+  /* Text Colors for High Contrast */
+  --color-text-primary: #ffffff;    /* Pure white */
+  --color-text-secondary: #f1f5f9;  /* Off white */
+  --color-text-muted: #cbd5e1;      /* Medium gray */
+  --color-text-inverse: #0f172a;    /* Dark navy for light backgrounds */
+  --color-text-link: #fbbf24;       /* Warm yellow */
+  --color-text-link-hover: #f59e0b; /* Deeper yellow */
+  
+  /* Background Colors */
+  --color-bg-primary: #0f172a;
+  --color-bg-secondary: #1e293b;
+  --color-bg-card: #334155;
+  --color-bg-overlay: rgba(15, 23, 42, 0.95);
+}
 
 * {
   margin: 0;
@@ -8,15 +53,157 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
-  color: #1a1a1a;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   min-height: 100vh;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px; /* Base font size for rem calculations */
+}
+
+/* Typography Utilities */
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+.text-3xl { font-size: var(--font-size-3xl); }
+.text-4xl { font-size: var(--font-size-4xl); }
+.text-5xl { font-size: var(--font-size-5xl); }
+.text-6xl { font-size: var(--font-size-6xl); }
+
+.leading-tight { line-height: var(--line-height-tight); }
+.leading-snug { line-height: var(--line-height-snug); }
+.leading-normal { line-height: var(--line-height-normal); }
+.leading-relaxed { line-height: var(--line-height-relaxed); }
+.leading-loose { line-height: var(--line-height-loose); }
+
+.font-sans { font-family: var(--font-sans); }
+.font-serif { font-family: var(--font-serif); }
+
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-muted { color: var(--color-text-muted); }
+.text-inverse { color: var(--color-text-inverse); }
+
+/* Improved heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: var(--line-height-tight);
+  margin-bottom: 0.75em;
+  color: var(--color-text-primary);
+}
+
+h1 {
+  font-size: var(--font-size-5xl);
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: var(--font-size-4xl);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: var(--font-size-3xl);
+  line-height: 1.25;
+}
+
+h4 {
+  font-size: var(--font-size-2xl);
+}
+
+h5 {
+  font-size: var(--font-size-xl);
+}
+
+h6 {
+  font-size: var(--font-size-lg);
+}
+
+/* Improved paragraph and text styles */
+p {
+  margin-bottom: 1.25em;
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  max-width: 75ch; /* Optimal reading length */
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Better link styles */
+a {
+  color: var(--color-text-link);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover, a:focus {
+  color: var(--color-text-link-hover);
+  text-decoration: underline;
+}
+
+/* Improved list styles */
+ul, ol {
+  margin-bottom: 1.25em;
+  padding-left: 1.5em;
+}
+
+li {
+  margin-bottom: 0.5em;
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+}
+
+/* Better blockquote styles */
+blockquote {
+  border-left: 4px solid #667eea;
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--color-text-secondary);
+  background: rgba(102, 126, 234, 0.05);
+  padding: 1rem 1.5rem;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Code styling */
+code {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  font-size: 0.875em;
+  background: rgba(102, 126, 234, 0.1);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  color: var(--color-text-primary);
+}
+
+pre {
+  background: var(--color-text-primary);
+  color: var(--color-text-inverse);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
 }
 
 /* Custom scrollbar */
@@ -25,16 +212,16 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--color-primary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+  background: var(--color-accent-hover);
 }
 
 /* Animations */
@@ -92,75 +279,147 @@ html {
   animation: float 3s ease-in-out infinite;
 }
 
-/* Responsive Design */
+/* Responsive Design with Better Readability */
+@media (max-width: 1024px) {
+  /* Tablet adjustments */
+  :root {
+    --font-size-base: 1.125rem; /* 18px for better tablet reading */
+  }
+  
+  h1 { font-size: var(--font-size-4xl); }
+  h2 { font-size: var(--font-size-3xl); }
+  h3 { font-size: var(--font-size-2xl); }
+  
+  p {
+    max-width: 70ch;
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+  }
+}
+
 @media (max-width: 768px) {
+  /* Mobile adjustments for better readability */
+  :root {
+    --font-size-base: 1rem; /* 16px base */
+  }
+  
   body {
-    font-size: 14px;
+    line-height: var(--line-height-loose);
   }
   
-  /* Hero section adjustments */
-  .hero-title {
-    font-size: clamp(2.5rem, 6vw, 3.5rem) !important;
+  h1 {
+    font-size: clamp(2.25rem, 8vw, 3rem);
+    line-height: 1.15;
+    margin-bottom: 1rem;
   }
   
-  .hero-subtitle {
-    font-size: clamp(1rem, 3vw, 1.4rem) !important;
+  h2 {
+    font-size: clamp(1.875rem, 6vw, 2.25rem);
+    line-height: 1.2;
+    margin-bottom: 0.875rem;
   }
   
-  /* Grid adjustments */
-  .works-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
+  h3 {
+    font-size: clamp(1.5rem, 5vw, 1.875rem);
+    line-height: 1.25;
   }
   
-  .skills-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
+  p {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-loose);
+    margin-bottom: 1.5rem;
+    max-width: 100%;
   }
   
-  /* Navigation adjustments */
-  .nav-links {
-    gap: 1rem !important;
+  /* Improved spacing for mobile */
+  .hero-section {
+    padding: 4rem 0 !important;
   }
   
-  /* Section padding adjustments */
   .section-padding {
-    padding: 3rem 0 !important;
+    padding: 4rem 0 !important;
   }
   
-  /* Container padding */
   .container {
-    padding: 0 1rem !important;
+    padding: 0 1.25rem !important;
   }
   
-  /* Button adjustments */
+  /* Better button readability */
   .cta-button {
-    padding: 0.8rem 2rem !important;
-    font-size: 1rem !important;
+    padding: 1rem 2rem !important;
+    font-size: var(--font-size-lg) !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Card improvements */
+  .work-card, .skill-card {
+    padding: 2rem !important;
+    border-radius: 16px !important;
+  }
+  
+  /* Navigation improvements */
+  .nav-links {
+    gap: 1.5rem !important;
+    font-size: var(--font-size-lg) !important;
   }
 }
 
 @media (max-width: 480px) {
-  /* Extra small screens */
-  .hero-title {
-    font-size: 2.5rem !important;
-    line-height: 1.2 !important;
+  /* Extra small screens - prioritize readability */
+  :root {
+    --font-size-base: 1rem;
   }
   
-  .hero-subtitle {
-    font-size: 1.1rem !important;
+  body {
+    line-height: 1.75;
   }
   
-  .section-title {
-    font-size: 2rem !important;
+  h1 {
+    font-size: clamp(2rem, 10vw, 2.5rem);
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
   }
   
-  .work-card, .skill-card {
-    padding: 1.5rem !important;
+  h2 {
+    font-size: clamp(1.75rem, 8vw, 2rem);
+    line-height: 1.25;
+    margin-bottom: 1rem;
   }
   
+  h3 {
+    font-size: clamp(1.5rem, 6vw, 1.75rem);
+  }
+  
+  p {
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    margin-bottom: 1.75rem;
+  }
+  
+  /* Larger touch targets */
+  .cta-button, a[role="button"] {
+    min-height: 48px;
+    padding: 1rem 1.5rem !important;
+    font-size: var(--font-size-base) !important;
+  }
+  
+  /* Remove decorative elements that hurt readability */
   .floating-elements {
     display: none !important;
+  }
+  
+  /* Increase contrast on small screens */
+  .text-muted {
+    color: var(--color-text-secondary) !important;
+  }
+  
+  /* Better spacing */
+  .container {
+    padding: 0 1rem !important;
+  }
+  
+  .section-padding {
+    padding: 3rem 0 !important;
   }
 }
 

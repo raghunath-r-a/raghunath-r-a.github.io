@@ -32,3 +32,6 @@ public/
 
 # Build outputs
 dist/
+
+# Claude configuration
+.claude/

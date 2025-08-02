@@ -21,22 +21,26 @@ const IndexPage = () => {
   }
 
   const titleStyle = {
-    fontSize: 'clamp(3rem, 8vw, 6rem)',
-    fontFamily: 'Playfair Display, serif',
-    fontWeight: '700',
-    background: 'linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.8) 100%)',
+    fontSize: 'clamp(var(--font-size-5xl), 8vw, var(--font-size-6xl))',
+    fontFamily: 'var(--font-serif)',
+    fontWeight: '600',
+    background: 'linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.9) 100%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     marginBottom: '1.5rem',
-    lineHeight: '1.1'
+    lineHeight: 'var(--line-height-tight)',
+    letterSpacing: '-0.02em'
   }
 
   const subtitleStyle = {
-    fontSize: 'clamp(1.2rem, 3vw, 1.8rem)',
-    color: 'rgba(255, 255, 255, 0.9)',
+    fontSize: 'clamp(var(--font-size-lg), 3vw, var(--font-size-2xl))',
+    color: 'rgba(255, 255, 255, 0.95)',
     marginBottom: '2rem',
-    fontWeight: '300',
-    lineHeight: '1.4'
+    fontWeight: '400',
+    lineHeight: 'var(--line-height-relaxed)',
+    fontFamily: 'var(--font-sans)',
+    maxWidth: '600px',
+    margin: '0 auto 2rem'
   }
 
   const ctaButtonStyle = {
@@ -48,14 +52,20 @@ const IndexPage = () => {
     borderRadius: '50px',
     color: 'white',
     textDecoration: 'none',
-    fontWeight: '600',
-    fontSize: '1.1rem',
+    fontWeight: '500',
+    fontSize: 'var(--font-size-lg)',
+    fontFamily: 'var(--font-sans)',
+    lineHeight: 'var(--line-height-normal)',
     transition: 'all 0.3s ease',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    minHeight: '48px',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 
   const sectionStyle = {
-    background: 'white',
+    background: 'var(--color-bg-primary)',
     padding: '5rem 0',
     position: 'relative'
   }
@@ -67,14 +77,16 @@ const IndexPage = () => {
   }
 
   const sectionTitleStyle = {
-    fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
-    fontFamily: 'Playfair Display, serif',
+    fontSize: 'clamp(var(--font-size-3xl), 5vw, var(--font-size-4xl))',
+    fontFamily: 'var(--font-serif)',
     fontWeight: '600',
     textAlign: 'center',
     marginBottom: '3rem',
     background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent'
+    WebkitTextFillColor: 'transparent',
+    lineHeight: 'var(--line-height-tight)',
+    letterSpacing: '-0.01em'
   }
 
   const worksGridStyle = {
@@ -85,29 +97,33 @@ const IndexPage = () => {
   }
 
   const workCardStyle = {
-    background: 'linear-gradient(145deg, #f8f9ff 0%, #fff 100%)',
+    background: 'var(--color-bg-card)',
     borderRadius: '20px',
     padding: '2rem',
-    boxShadow: '0 10px 30px rgba(102, 126, 234, 0.1)',
-    border: '1px solid rgba(102, 126, 234, 0.1)',
+    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+    border: '1px solid rgba(251, 191, 36, 0.2)',
     transition: 'all 0.3s ease',
     cursor: 'pointer'
   }
 
   const workTitleStyle = {
-    fontSize: '1.3rem',
+    fontSize: 'var(--font-size-xl)',
     fontWeight: '600',
-    color: '#333',
-    marginBottom: '0.5rem',
-    fontFamily: 'Playfair Display, serif'
+    color: 'var(--color-text-primary)',
+    marginBottom: '0.75rem',
+    fontFamily: 'var(--font-serif)',
+    lineHeight: 'var(--line-height-snug)'
   }
 
   const workLinkStyle = {
-    color: '#667eea',
+    color: 'var(--color-text-link)',
     textDecoration: 'none',
     fontWeight: '500',
+    fontSize: 'var(--font-size-base)',
+    fontFamily: 'var(--font-sans)',
     borderBottom: '2px solid transparent',
-    transition: 'border-color 0.3s ease'
+    transition: 'border-color 0.3s ease',
+    lineHeight: 'var(--line-height-normal)'
   }
 
   const floatingElementStyle = {
@@ -161,8 +177,8 @@ const IndexPage = () => {
         <div style={heroContentStyle} className="fade-in-up">
           <h1 style={titleStyle}>Raghunath Reddy</h1>
           <p style={subtitleStyle}>
-            Crafting compelling narratives in the digital realm.<br/>
-            Technical Content Writer • Editor • Product Marketer
+            Driving cybersecurity excellence through strategic content management.<br/>
+            Program Manager • CyberSecurity
           </p>
           <Link 
             to="/about" 
@@ -194,14 +210,23 @@ const IndexPage = () => {
                 className="fade-in-up"
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-5px)'
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(102, 126, 234, 0.15)'
+                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(251, 191, 36, 0.15)'
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)'
-                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(102, 126, 234, 0.1)'
+                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)'
                 }}
               >
-                <div style={{ fontSize: '0.9rem', color: '#667eea', fontWeight: '600', marginBottom: '0.5rem' }}>
+                <div style={{ 
+                  fontSize: 'var(--font-size-sm)', 
+                  color: 'var(--color-accent)', 
+                  fontWeight: '600', 
+                  marginBottom: '0.75rem',
+                  fontFamily: 'var(--font-sans)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
+                  lineHeight: 'var(--line-height-normal)'
+                }}>
                   {work.type}
                 </div>
                 <h3 style={workTitleStyle}>{work.title}</h3>
@@ -210,7 +235,7 @@ const IndexPage = () => {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   style={workLinkStyle}
-                  onMouseEnter={(e) => e.target.style.borderColor = '#667eea'}
+                  onMouseEnter={(e) => e.target.style.borderColor = 'var(--color-accent)'}
                   onMouseLeave={(e) => e.target.style.borderColor = 'transparent'}
                 >
                   Read More →
@@ -222,20 +247,29 @@ const IndexPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section style={{...sectionStyle, background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white'}}>
+      <section style={{...sectionStyle, background: 'linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%)', color: '#0f172a'}}>
         <div style={{...containerStyle, textAlign: 'center'}}>
-          <h2 style={{...sectionTitleStyle, color: 'white', marginBottom: '2rem'}}>
-            Let's Create Something Amazing
+          <h2 style={{...sectionTitleStyle, color: '#0f172a', marginBottom: '2rem'}}>
+            Let's Strengthen Security Together
           </h2>
-          <p style={{ fontSize: '1.2rem', marginBottom: '2rem', opacity: 0.9 }}>
-            Ready to elevate your content strategy? Let's collaborate.
+          <p style={{ 
+            fontSize: 'var(--font-size-xl)', 
+            marginBottom: '2rem', 
+            opacity: 0.95,
+            fontFamily: 'var(--font-sans)',
+            lineHeight: 'var(--line-height-relaxed)',
+            maxWidth: '600px',
+            margin: '0 auto 2rem'
+          }}>
+            Ready to discuss cybersecurity program management or enterprise security initiatives?
           </p>
           <Link 
             to="/about" 
             style={{
               ...ctaButtonStyle,
-              background: 'rgba(255, 255, 255, 0.2)',
-              border: '2px solid rgba(255, 255, 255, 0.4)'
+              background: 'rgba(15, 23, 42, 0.15)',
+              border: '2px solid rgba(15, 23, 42, 0.3)',
+              color: '#0f172a'
             }}
           >
             Get In Touch
