@@ -91,9 +91,10 @@ const IndexPage = () => {
 
   const worksGridStyle = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
     gap: '2rem',
-    marginBottom: '3rem'
+    marginBottom: '3rem',
+    alignItems: 'stretch'
   }
 
   const workCardStyle = {
@@ -101,9 +102,13 @@ const IndexPage = () => {
     borderRadius: '20px',
     padding: '2rem',
     boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
-    border: '1px solid rgba(251, 191, 36, 0.2)',
+    border: '1px solid rgba(6, 182, 212, 0.2)',
     transition: 'all 0.3s ease',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between'
   }
 
   const workTitleStyle = {
@@ -202,39 +207,41 @@ const IndexPage = () => {
         <div style={containerStyle}>
           <h2 style={sectionTitleStyle} className="fade-in-up">Featured Works</h2>
           
-          <div style={worksGridStyle}>
+          <div style={worksGridStyle} className="mobile-single-column">
             {works.map((work, index) => (
               <div 
                 key={index}
                 style={workCardStyle}
-                className="fade-in-up"
+                className="fade-in-up mobile-reduced-padding"
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-5px)'
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(251, 191, 36, 0.15)'
+                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(6, 182, 212, 0.15)'
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)'
                   e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)'
                 }}
               >
-                <div style={{ 
-                  fontSize: 'var(--font-size-sm)', 
-                  color: 'var(--color-accent)', 
-                  fontWeight: '600', 
-                  marginBottom: '0.75rem',
-                  fontFamily: 'var(--font-sans)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.05em',
-                  lineHeight: 'var(--line-height-normal)'
-                }}>
-                  {work.type}
+                <div>
+                  <div style={{ 
+                    fontSize: 'var(--font-size-sm)', 
+                    color: 'var(--color-accent)', 
+                    fontWeight: '600', 
+                    marginBottom: '0.75rem',
+                    fontFamily: 'var(--font-sans)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em',
+                    lineHeight: 'var(--line-height-normal)'
+                  }}>
+                    {work.type}
+                  </div>
+                  <h3 style={workTitleStyle}>{work.title}</h3>
                 </div>
-                <h3 style={workTitleStyle}>{work.title}</h3>
                 <a 
                   href={work.url} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  style={workLinkStyle}
+                  style={{...workLinkStyle, marginTop: '1rem'}}
                   onMouseEnter={(e) => e.target.style.borderColor = 'var(--color-accent)'}
                   onMouseLeave={(e) => e.target.style.borderColor = 'transparent'}
                 >
@@ -247,9 +254,9 @@ const IndexPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section style={{...sectionStyle, background: 'linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%)', color: '#0f172a'}}>
+      <section style={{...sectionStyle, background: 'linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%)', color: 'var(--color-text-primary)', border: '1px solid rgba(6, 182, 212, 0.3)'}}>
         <div style={{...containerStyle, textAlign: 'center'}}>
-          <h2 style={{...sectionTitleStyle, color: '#0f172a', marginBottom: '2rem'}}>
+          <h2 style={{...sectionTitleStyle, color: 'var(--color-text-primary)', marginBottom: '2rem'}}>
             Let's Strengthen Security Together
           </h2>
           <p style={{ 
@@ -267,9 +274,9 @@ const IndexPage = () => {
             to="/about" 
             style={{
               ...ctaButtonStyle,
-              background: 'rgba(15, 23, 42, 0.15)',
-              border: '2px solid rgba(15, 23, 42, 0.3)',
-              color: '#0f172a'
+              background: 'rgba(6, 182, 212, 0.15)',
+              border: '2px solid var(--color-accent)',
+              color: 'var(--color-accent)'
             }}
           >
             Get In Touch

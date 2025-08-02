@@ -62,9 +62,10 @@ const AboutPage = () => {
 
   const skillsGridStyle = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
     gap: '2rem',
-    marginTop: '3rem'
+    marginTop: '3rem',
+    alignItems: 'stretch'
   }
 
   const skillCardStyle = {
@@ -72,9 +73,14 @@ const AboutPage = () => {
     borderRadius: '15px',
     padding: '2rem',
     boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
-    border: '1px solid rgba(251, 191, 36, 0.2)',
+    border: '1px solid rgba(6, 182, 212, 0.2)',
     textAlign: 'center',
-    transition: 'transform 0.3s ease'
+    transition: 'transform 0.3s ease',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center'
   }
 
   const skillIconStyle = {
@@ -175,11 +181,12 @@ const AboutPage = () => {
             </div>
             
             <div className="fade-in-up" style={{
-              background: 'linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%)',
+              background: 'linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%)',
               borderRadius: '20px',
               padding: '3rem',
-              color: '#0f172a',
-              textAlign: 'center'
+              color: 'var(--color-text-primary)',
+              textAlign: 'center',
+              border: '2px solid var(--color-accent)'
             }}>
               <h3 style={{
                 fontSize: 'var(--font-size-2xl)', 
@@ -208,10 +215,10 @@ const AboutPage = () => {
                   href="mailto:raghunath-r-a@getburner.email"
                   style={{
                     padding: '1rem 2rem',
-                    background: 'rgba(15, 23, 42, 0.15)',
-                    border: '2px solid rgba(15, 23, 42, 0.3)',
+                    background: 'rgba(6, 182, 212, 0.15)',
+                    border: '2px solid var(--color-accent)',
                     borderRadius: '25px',
-                    color: '#0f172a',
+                    color: 'var(--color-accent)',
                     textDecoration: 'none',
                     fontWeight: '600',
                     fontSize: 'var(--font-size-base)',
@@ -220,10 +227,10 @@ const AboutPage = () => {
                     backdropFilter: 'blur(10px)'
                   }}
                   onMouseEnter={(e) => {
-                    e.target.style.background = 'rgba(15, 23, 42, 0.25)'
+                    e.target.style.background = 'rgba(6, 182, 212, 0.25)'
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.background = 'rgba(15, 23, 42, 0.15)'
+                    e.target.style.background = 'rgba(6, 182, 212, 0.15)'
                   }}
                 >
                   Email Me
@@ -239,12 +246,12 @@ const AboutPage = () => {
         <div style={containerStyle}>
           <h2 style={sectionTitleStyle} className="fade-in-up">What I Do Best</h2>
           
-          <div style={skillsGridStyle}>
+          <div style={skillsGridStyle} className="mobile-single-column">
             {skills.map((skill, index) => (
               <div 
                 key={index}
                 style={skillCardStyle}
-                className="fade-in-up"
+                className="fade-in-up mobile-reduced-padding"
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-10px)'
                 }}

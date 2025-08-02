@@ -10,7 +10,7 @@ const Layout = ({ children, isHomePage = false }) => {
     zIndex: 1000,
     background: 'var(--color-bg-overlay)',
     backdropFilter: 'blur(10px)',
-    borderBottom: '1px solid rgba(251, 191, 36, 0.3)',
+    borderBottom: '1px solid rgba(6, 182, 212, 0.3)',
     padding: '1rem 0',
     transition: 'all 0.3s ease'
   }
@@ -39,7 +39,7 @@ const Layout = ({ children, isHomePage = false }) => {
     display: 'flex',
     gap: '2rem',
     alignItems: 'center',
-    className: 'nav-links'
+    flexWrap: 'wrap'
   }
 
   const navLinkStyle = {
@@ -64,7 +64,7 @@ const Layout = ({ children, isHomePage = false }) => {
     backdropFilter: 'blur(10px)',
     padding: '3rem 0 2rem',
     textAlign: 'center',
-    borderTop: '1px solid rgba(251, 191, 36, 0.3)',
+    borderTop: '1px solid rgba(6, 182, 212, 0.3)',
     color: 'var(--color-text-secondary)'
   }
 

@@ -6,10 +6,10 @@ const BlogPage = ({ data }) => {
   const posts = data.allMarkdownRemark.nodes
 
   const heroStyle = {
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    background: 'linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%)',
     padding: '8rem 0 6rem',
     textAlign: 'center',
-    color: 'white'
+    color: 'var(--color-text-primary)'
   }
 
   const containerStyle = {
@@ -19,33 +19,57 @@ const BlogPage = ({ data }) => {
   }
 
   const titleStyle = {
-    fontSize: 'clamp(3rem, 6vw, 4.5rem)',
-    fontFamily: 'Playfair Display, serif',
-    fontWeight: '700',
+    fontSize: 'clamp(var(--font-size-4xl), 6vw, var(--font-size-5xl))',
+    fontFamily: 'var(--font-serif)',
+    fontWeight: '600',
     marginBottom: '1.5rem',
-    lineHeight: '1.1'
+    lineHeight: 'var(--line-height-tight)',
+    letterSpacing: '-0.02em'
   }
 
   const subtitleStyle = {
-    fontSize: 'clamp(1.2rem, 3vw, 1.6rem)',
-    opacity: 0.9,
-    fontWeight: '300',
+    fontSize: 'clamp(var(--font-size-lg), 3vw, var(--font-size-xl))',
+    opacity: 0.95,
+    fontWeight: '400',
+    fontFamily: 'var(--font-sans)',
+    lineHeight: 'var(--line-height-relaxed)',
     maxWidth: '600px',
     margin: '0 auto'
   }
 
   const sectionStyle = {
     padding: '6rem 0',
-    background: 'white'
+    background: 'var(--color-bg-primary)'
   }
 
   const comingSoonStyle = {
     textAlign: 'center',
     padding: '4rem 2rem',
-    background: 'linear-gradient(145deg, #f8f9ff 0%, #fff 100%)',
+    background: 'var(--color-bg-card)',
     borderRadius: '20px',
     margin: '2rem 0',
-    boxShadow: '0 10px 30px rgba(102, 126, 234, 0.1)'
+    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+    border: '1px solid rgba(6, 182, 212, 0.2)'
+  }
+
+  const blogGridStyle = {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+    gap: '2rem',
+    alignItems: 'stretch'
+  }
+
+  const blogCardStyle = {
+    background: 'var(--color-bg-card)',
+    borderRadius: '20px',
+    padding: '2rem',
+    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+    border: '1px solid rgba(6, 182, 212, 0.2)',
+    transition: 'all 0.3s ease',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between'
   }
 
   return (
@@ -55,7 +79,7 @@ const BlogPage = ({ data }) => {
         <div style={containerStyle}>
           <h1 style={titleStyle} className="fade-in-up">Blog</h1>
           <p style={subtitleStyle} className="fade-in-up">
-            Thoughts, insights, and stories from the digital frontier
+            Insights on cybersecurity program management, AI-assisted development, and strategic communication
           </p>
         </div>
       </section>
@@ -64,126 +88,141 @@ const BlogPage = ({ data }) => {
       <section style={sectionStyle}>
         <div style={containerStyle}>
           {posts.length > 0 ? (
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-              gap: '2rem'
-            }}>
+            <div style={blogGridStyle} className="mobile-single-column">
               {posts.map((post) => (
                 <article
                   key={post.id}
-                  style={{
-                    background: 'linear-gradient(145deg, #f8f9ff 0%, #fff 100%)',
-                    borderRadius: '20px',
-                    padding: '2rem',
-                    boxShadow: '0 10px 30px rgba(102, 126, 234, 0.1)',
-                    border: '1px solid rgba(102, 126, 234, 0.1)',
-                    transition: 'transform 0.3s ease'
-                  }}
+                  style={blogCardStyle}
+                  className="mobile-reduced-padding"
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'translateY(-5px)'
+                    e.currentTarget.style.boxShadow = '0 20px 40px rgba(6, 182, 212, 0.15)'
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = 'translateY(0)'
+                    e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)'
                   }}
                 >
-                  <h2 style={{
-                    fontSize: '1.5rem',
-                    fontFamily: 'Playfair Display, serif',
-                    fontWeight: '600',
-                    marginBottom: '1rem',
-                    color: '#333'
-                  }}>
-                    <Link 
-                      to={`/blog${post.fields.slug}`}
-                      style={{
-                        textDecoration: 'none',
-                        color: 'inherit',
-                        borderBottom: '2px solid transparent',
-                        transition: 'border-color 0.3s ease'
-                      }}
-                      onMouseEnter={(e) => e.target.style.borderColor = '#667eea'}
-                      onMouseLeave={(e) => e.target.style.borderColor = 'transparent'}
-                    >
-                      {post.frontmatter.title}
-                    </Link>
-                  </h2>
-                  <div style={{
-                    fontSize: '0.9rem',
-                    color: '#667eea',
-                    marginBottom: '1rem',
-                    fontWeight: '500'
-                  }}>
-                    {post.frontmatter.date} • by {post.frontmatter.author}
-                  </div>
-                  <p style={{
-                    color: '#666',
-                    lineHeight: '1.6',
-                    marginBottom: '1rem'
-                  }}>
-                    {post.excerpt}
-                  </p>
-                  {post.frontmatter.tags && (
-                    <div style={{ marginTop: '1rem' }}>
-                      {post.frontmatter.tags.map((tag, index) => (
-                        <span
-                          key={index}
+                  <div style={{ flex: '1', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ marginBottom: '1rem' }}>
+                      <div style={{
+                        fontSize: 'var(--font-size-sm)',
+                        color: 'var(--color-accent)',
+                        marginBottom: '0.75rem',
+                        fontWeight: '600',
+                        fontFamily: 'var(--font-sans)',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.05em',
+                        lineHeight: 'var(--line-height-normal)'
+                      }}>
+                        {post.frontmatter.date} • by {post.frontmatter.author}
+                      </div>
+                      <h2 style={{
+                        fontSize: 'var(--font-size-xl)',
+                        fontFamily: 'var(--font-serif)',
+                        fontWeight: '600',
+                        marginBottom: '0.75rem',
+                        color: 'var(--color-text-primary)',
+                        lineHeight: 'var(--line-height-snug)'
+                      }}>
+                        <Link 
+                          to={`/blog${post.fields.slug}`}
                           style={{
-                            display: 'inline-block',
-                            background: 'rgba(102, 126, 234, 0.1)',
-                            color: '#667eea',
-                            padding: '0.3rem 0.8rem',
-                            borderRadius: '15px',
-                            fontSize: '0.8rem',
-                            marginRight: '0.5rem',
-                            marginBottom: '0.5rem'
+                            textDecoration: 'none',
+                            color: 'inherit',
+                            borderBottom: '2px solid transparent',
+                            transition: 'border-color 0.3s ease'
                           }}
+                          onMouseEnter={(e) => e.target.style.borderColor = 'var(--color-accent)'}
+                          onMouseLeave={(e) => e.target.style.borderColor = 'transparent'}
                         >
-                          #{tag}
-                        </span>
-                      ))}
+                          {post.frontmatter.title}
+                        </Link>
+                      </h2>
+                      <p style={{
+                        color: 'var(--color-text-secondary)',
+                        lineHeight: 'var(--line-height-relaxed)',
+                        fontSize: 'var(--font-size-base)',
+                        fontFamily: 'var(--font-sans)',
+                        flex: '1'
+                      }}>
+                        {post.excerpt}
+                      </p>
                     </div>
-                  )}
+                    {post.frontmatter.tags && (
+                      <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
+                        {post.frontmatter.tags.map((tag, index) => (
+                          <span
+                            key={index}
+                            style={{
+                              display: 'inline-block',
+                              background: 'rgba(6, 182, 212, 0.15)',
+                              color: 'var(--color-accent)',
+                              padding: '0.3rem 0.8rem',
+                              borderRadius: '15px',
+                              fontSize: 'var(--font-size-xs)',
+                              fontFamily: 'var(--font-sans)',
+                              fontWeight: '500',
+                              marginRight: '0.5rem',
+                              marginBottom: '0.5rem',
+                              border: '1px solid rgba(6, 182, 212, 0.3)'
+                            }}
+                          >
+                            #{tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </article>
               ))}
             </div>
           ) : (
             <div style={comingSoonStyle} className="fade-in-up">
               <h2 style={{
-                fontSize: '2rem',
-                fontFamily: 'Playfair Display, serif',
+                fontSize: 'var(--font-size-3xl)',
+                fontFamily: 'var(--font-serif)',
                 marginBottom: '1rem',
-                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                background: 'linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%)',
                 WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent'
+                WebkitTextFillColor: 'transparent',
+                fontWeight: '600'
               }}>
                 Coming Soon
               </h2>
               <p style={{
-                fontSize: '1.1rem',
-                color: '#666',
-                marginBottom: '2rem'
+                fontSize: 'var(--font-size-lg)',
+                color: 'var(--color-text-secondary)',
+                marginBottom: '2rem',
+                fontFamily: 'var(--font-sans)',
+                lineHeight: 'var(--line-height-relaxed)'
               }}>
-                I'm working on some amazing content that will be published here soon. 
-                Stay tuned for insights on technical writing, product marketing, and digital innovation!
+                I'm working on content about cybersecurity program management, AI-assisted development, and technical communication strategies. 
+                Stay tuned for insights on building secure, effective programs!
               </p>
               <Link
                 to="/"
                 style={{
                   display: 'inline-block',
                   padding: '1rem 2rem',
-                  background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                  color: 'white',
+                  background: 'rgba(6, 182, 212, 0.15)',
+                  border: '2px solid var(--color-accent)',
+                  color: 'var(--color-accent)',
                   textDecoration: 'none',
                   borderRadius: '25px',
-                  fontWeight: '500',
-                  transition: 'transform 0.3s ease'
+                  fontWeight: '600',
+                  fontSize: 'var(--font-size-base)',
+                  fontFamily: 'var(--font-sans)',
+                  transition: 'all 0.3s ease',
+                  backdropFilter: 'blur(10px)'
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.transform = 'translateY(-2px)'
+                  e.target.style.background = 'rgba(6, 182, 212, 0.25)'
                 }}
                 onMouseLeave={(e) => {
                   e.target.style.transform = 'translateY(0)'
+                  e.target.style.background = 'rgba(6, 182, 212, 0.15)'
                 }}
               >
                 Back to Home
@@ -201,7 +240,7 @@ export default BlogPage
 export const Head = () => (
   <>
     <title>Blog - Raghunath Reddy</title>
-    <meta name="description" content="Thoughts, insights, and stories from the digital frontier by Raghunath Reddy" />
+    <meta name="description" content="Insights on cybersecurity program management, AI-assisted development, and strategic communication by Raghunath Reddy" />
   </>
 )
 
