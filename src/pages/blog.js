@@ -195,7 +195,9 @@ const BlogPage = ({ data }) => {
                 color: 'var(--color-text-secondary)',
                 marginBottom: '2rem',
                 fontFamily: 'var(--font-sans)',
-                lineHeight: 'var(--line-height-relaxed)'
+                lineHeight: 'var(--line-height-relaxed)',
+                maxWidth: '600px',
+                margin: '0 auto 2rem'
               }}>
                 I'm working on content about cybersecurity program management, AI-assisted development, and technical communication strategies. 
                 Stay tuned for insights on building secure, effective programs!
