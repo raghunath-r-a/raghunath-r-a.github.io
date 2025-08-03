@@ -13,9 +13,9 @@ const BlogPage = ({ data }) => {
   }
 
   const containerStyle = {
-    maxWidth: '1200px',
+    maxWidth: '1400px',
     margin: '0 auto',
-    padding: '0 2rem'
+    padding: '0 clamp(1rem, 5vw, 3rem)'
   }
 
   const titleStyle = {
@@ -38,18 +38,19 @@ const BlogPage = ({ data }) => {
   }
 
   const sectionStyle = {
-    padding: '6rem 0',
+    padding: 'clamp(4rem, 8vw, 8rem) 0',
     background: 'var(--color-bg-primary)'
   }
 
   const comingSoonStyle = {
     textAlign: 'center',
-    padding: '4rem 2rem',
-    background: 'var(--color-bg-card)',
-    borderRadius: '20px',
-    margin: '2rem 0',
-    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
-    border: '1px solid rgba(6, 182, 212, 0.2)'
+    padding: 'clamp(3rem, 6vw, 5rem)',
+    background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.8))',
+    borderRadius: '32px',
+    margin: '3rem 0',
+    boxShadow: '0 16px 40px rgba(6, 182, 212, 0.1), 0 4px 16px rgba(0, 0, 0, 0.1)',
+    border: '1px solid rgba(6, 182, 212, 0.1)',
+    backdropFilter: 'blur(20px)'
   }
 
   const blogGridStyle = {

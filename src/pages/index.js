@@ -44,36 +44,36 @@ const IndexPage = () => {
   }
 
   const ctaButtonStyle = {
-    display: 'inline-block',
-    padding: '1rem 2.5rem',
-    background: 'rgba(255, 255, 255, 0.15)',
-    backdropFilter: 'blur(10px)',
-    border: '2px solid rgba(255, 255, 255, 0.3)',
-    borderRadius: '50px',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '1.25rem 3rem',
+    background: 'rgba(255, 255, 255, 0.1)',
+    backdropFilter: 'blur(20px)',
+    border: '1px solid rgba(255, 255, 255, 0.2)',
+    borderRadius: '60px',
     color: 'white',
     textDecoration: 'none',
     fontWeight: '500',
-    fontSize: 'var(--font-size-lg)',
+    fontSize: 'clamp(var(--font-size-base), 2.5vw, var(--font-size-lg))',
     fontFamily: 'var(--font-sans)',
     lineHeight: 'var(--line-height-normal)',
-    transition: 'all 0.3s ease',
+    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
     cursor: 'pointer',
-    minHeight: '48px',
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'center'
+    minHeight: '56px',
+    letterSpacing: '0.025em'
   }
 
   const sectionStyle = {
     background: 'var(--color-bg-primary)',
-    padding: '5rem 0',
+    padding: '6rem 0 8rem',
     position: 'relative'
   }
 
   const containerStyle = {
-    maxWidth: '1200px',
+    maxWidth: '1400px',
     margin: '0 auto',
-    padding: '0 2rem'
+    padding: '0 clamp(1rem, 5vw, 3rem)'
   }
 
   const sectionTitleStyle = {
@@ -91,24 +91,25 @@ const IndexPage = () => {
 
   const worksGridStyle = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-    gap: '2rem',
-    marginBottom: '3rem',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+    gap: 'clamp(1.5rem, 4vw, 3rem)',
+    marginBottom: '4rem',
     alignItems: 'stretch'
   }
 
   const workCardStyle = {
-    background: 'var(--color-bg-card)',
-    borderRadius: '20px',
-    padding: '2rem',
-    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
-    border: '1px solid rgba(6, 182, 212, 0.2)',
-    transition: 'all 0.3s ease',
+    background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.8))',
+    borderRadius: '24px',
+    padding: 'clamp(1.5rem, 4vw, 2.5rem)',
+    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(6, 182, 212, 0.08)',
+    border: '1px solid rgba(6, 182, 212, 0.1)',
+    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
     cursor: 'pointer',
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    backdropFilter: 'blur(10px)'
   }
 
   const workTitleStyle = {
@@ -189,12 +190,14 @@ const IndexPage = () => {
             to="/about" 
             style={ctaButtonStyle}
             onMouseEnter={(e) => {
-              e.target.style.background = 'rgba(255, 255, 255, 0.25)'
-              e.target.style.transform = 'translateY(-2px)'
+              e.target.style.background = 'rgba(255, 255, 255, 0.2)'
+              e.target.style.transform = 'translateY(-3px) scale(1.02)'
+              e.target.style.boxShadow = '0 12px 32px rgba(6, 182, 212, 0.3)'
             }}
             onMouseLeave={(e) => {
-              e.target.style.background = 'rgba(255, 255, 255, 0.15)'
-              e.target.style.transform = 'translateY(0)'
+              e.target.style.background = 'rgba(255, 255, 255, 0.1)'
+              e.target.style.transform = 'translateY(0) scale(1)'
+              e.target.style.boxShadow = 'none'
             }}
           >
             Discover My Story
@@ -214,12 +217,12 @@ const IndexPage = () => {
                 style={workCardStyle}
                 className="fade-in-up mobile-reduced-padding"
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)'
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(6, 182, 212, 0.15)'
+                  e.currentTarget.style.transform = 'translateY(-8px) scale(1.02)'
+                  e.currentTarget.style.boxShadow = '0 24px 48px rgba(6, 182, 212, 0.2), 0 8px 24px rgba(0, 0, 0, 0.1)'
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)'
-                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)'
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)'
+                  e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(6, 182, 212, 0.08)'
                 }}
               >
                 <div>
@@ -237,16 +240,18 @@ const IndexPage = () => {
                   </div>
                   <h3 style={workTitleStyle}>{work.title}</h3>
                 </div>
-                <a 
-                  href={work.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  style={{...workLinkStyle, marginTop: '1rem'}}
-                  onMouseEnter={(e) => e.target.style.borderColor = 'var(--color-accent)'}
-                  onMouseLeave={(e) => e.target.style.borderColor = 'transparent'}
-                >
-                  Read More →
-                </a>
+                {work.type !== "Achievement" && (
+                  <a 
+                    href={work.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    style={{...workLinkStyle, marginTop: '1rem'}}
+                    onMouseEnter={(e) => e.target.style.borderColor = 'var(--color-accent)'}
+                    onMouseLeave={(e) => e.target.style.borderColor = 'transparent'}
+                  >
+                    Read More →
+                  </a>
+                )}
               </div>
             ))}
           </div>

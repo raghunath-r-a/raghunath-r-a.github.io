@@ -9,9 +9,9 @@ const Layout = ({ children, isHomePage = false }) => {
     right: 0,
     zIndex: 1000,
     background: 'var(--color-bg-overlay)',
-    backdropFilter: 'blur(10px)',
-    borderBottom: '1px solid rgba(6, 182, 212, 0.3)',
-    padding: '1rem 0',
+    backdropFilter: 'blur(20px)',
+    borderBottom: '1px solid rgba(6, 182, 212, 0.1)',
+    padding: '1.25rem 0',
     transition: 'all 0.3s ease'
   }
 
@@ -56,7 +56,7 @@ const Layout = ({ children, isHomePage = false }) => {
 
   const mainStyle = {
     minHeight: '100vh',
-    paddingTop: isHomePage ? '0' : '100px'
+    paddingTop: isHomePage ? '0' : '120px'
   }
 
   const footerStyle = {
@@ -93,14 +93,6 @@ const Layout = ({ children, isHomePage = false }) => {
       
       <footer style={footerStyle}>
         <div style={footerContentStyle}>
-          <p style={{ 
-            fontSize: 'var(--font-size-lg)', 
-            marginBottom: '1rem',
-            lineHeight: 'var(--line-height-relaxed)',
-            fontFamily: 'var(--font-sans)'
-          }}>
-            Securing healthcare through strategic cybersecurity program management
-          </p>
           <p style={{ 
             fontSize: 'var(--font-size-sm)', 
             opacity: 0.8,
