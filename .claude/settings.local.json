@@ -9,7 +9,9 @@
       "Bash(git push:*)",
       "Bash(npm run develop:*)",
       "Bash(git commit:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(pkill:*)",
+      "Bash(npx gatsby develop:*)"
     ],
     "deny": []
   }

@@ -17,7 +17,7 @@ const AboutPage = () => {
 
   const titleStyle = {
     fontSize: 'clamp(var(--font-size-4xl), 6vw, var(--font-size-5xl))',
-    fontFamily: 'var(--font-serif)',
+    fontFamily: 'var(--font-sans)',
     fontWeight: '600',
     marginBottom: '1.5rem',
     lineHeight: 'var(--line-height-tight)',
@@ -56,9 +56,7 @@ const AboutPage = () => {
   }
 
   const highlightStyle = {
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
+    color: 'var(--color-accent)',
     fontWeight: '600'
   }
 
@@ -71,17 +69,16 @@ const AboutPage = () => {
   }
 
   const getSkillCardStyle = (index) => ({
-    background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.6))',
-    borderRadius: `${14 + (index % 2) * 3}px ${18 + (index % 3) * 4}px ${16 + (index % 4) * 2}px ${15 + (index % 2) * 4}px`,
+    background: 'var(--color-bg-card)',
+    borderRadius: '12px',
     padding: 'clamp(1.25rem, 3vw, 2rem)',
-    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(6, 182, 212, 0.06)',
-    border: 'none',
+    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+    border: '1px solid rgba(255, 255, 255, 0.1)',
     textAlign: 'left',
-    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+    transition: 'all 0.3s ease',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
-    backdropFilter: 'blur(8px)',
     flex: '1 1 calc(50% - 0.75rem)',
     minWidth: '280px',
     maxWidth: '450px'
@@ -104,13 +101,11 @@ const AboutPage = () => {
 
   const sectionTitleStyle = {
     fontSize: 'clamp(var(--font-size-3xl), 5vw, var(--font-size-4xl))',
-    fontFamily: 'var(--font-serif)',
+    fontFamily: 'var(--font-sans)',
     fontWeight: '600',
     textAlign: 'center',
     marginBottom: '3rem',
-    background: 'linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent'
+    color: 'var(--color-accent)'
   }
 
   const skills = [
@@ -253,232 +248,6 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Experience Section */}
-      <section style={{...sectionStyle, background: 'var(--color-bg-secondary)'}}>
-        <div style={containerStyle}>
-          <h2 style={sectionTitleStyle} className="fade-in-up">Professional Journey</h2>
-          
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 'clamp(1rem, 2.5vw, 1.5rem)',
-            marginBottom: '2rem'
-          }}>
-            <div style={{
-              background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.6))',
-              borderRadius: '16px 22px 18px 20px',
-              padding: 'clamp(1.25rem, 3vw, 2rem)',
-              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(6, 182, 212, 0.06)',
-              border: 'none',
-              backdropFilter: 'blur(8px)',
-              transition: 'all 0.3s ease'
-            }} className="fade-in-up">
-              <div style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'flex-start',
-                marginBottom: '1rem',
-                flexWrap: 'wrap',
-                gap: '1rem'
-              }}>
-                <div>
-                  <h3 style={{
-                    fontSize: 'var(--font-size-xl)',
-                    fontWeight: '600',
-                    color: 'var(--color-text-primary)',
-                    marginBottom: '0.5rem',
-                    fontFamily: 'var(--font-serif)'
-                  }}>
-                    Sr. Cybersecurity Program Manager
-                  </h3>
-                  <p style={{
-                    color: 'var(--color-accent)',
-                    fontWeight: '600',
-                    fontSize: 'var(--font-size-base)',
-                    fontFamily: 'var(--font-sans)'
-                  }}>
-                    US Healthcare Company • Global Capability Center, Hyderabad
-                  </p>
-                </div>
-                <span style={{
-                  background: 'rgba(6, 182, 212, 0.15)',
-                  color: 'var(--color-accent)',
-                  padding: '0.5rem 1rem',
-                  borderRadius: '20px',
-                  fontSize: 'var(--font-size-sm)',
-                  fontWeight: '600',
-                  fontFamily: 'var(--font-sans)'
-                }}>
-                  Current
-                </span>
-              </div>
-              <ul style={{
-                color: 'var(--color-text-secondary)',
-                lineHeight: 'var(--line-height-relaxed)',
-                fontSize: 'var(--font-size-base)',
-                fontFamily: 'var(--font-sans)',
-                paddingLeft: '1.5rem'
-              }}>
-                <li style={{marginBottom: '0.5rem'}}>Individual contributor role overseeing content management within Office of the CISO</li>
-                <li style={{marginBottom: '0.5rem'}}>Supporting Program Management Office objectives through strategic content initiatives</li>
-                <li>Cross-functional collaboration across cybersecurity teams and business stakeholders</li>
-              </ul>
-            </div>
-
-            <div style={{
-              background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.6))',
-              borderRadius: '16px 22px 18px 20px',
-              padding: 'clamp(1.25rem, 3vw, 2rem)',
-              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(6, 182, 212, 0.06)',
-              border: 'none',
-              backdropFilter: 'blur(8px)',
-              transition: 'all 0.3s ease'
-            }} className="fade-in-up">
-              <div style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'flex-start',
-                marginBottom: '1rem',
-                flexWrap: 'wrap',
-                gap: '1rem'
-              }}>
-                <div>
-                  <h3 style={{
-                    fontSize: 'var(--font-size-xl)',
-                    fontWeight: '600',
-                    color: 'var(--color-text-primary)',
-                    marginBottom: '0.5rem',
-                    fontFamily: 'var(--font-serif)'
-                  }}>
-                    Sr. Content Engineer
-                  </h3>
-                  <p style={{
-                    color: 'var(--color-accent)',
-                    fontWeight: '600',
-                    fontSize: 'var(--font-size-base)',
-                    fontFamily: 'var(--font-sans)'
-                  }}>
-                    CIAM Company • Hyderabad
-                  </p>
-                </div>
-              </div>
-              <ul style={{
-                color: 'var(--color-text-secondary)',
-                lineHeight: 'var(--line-height-relaxed)',
-                fontSize: 'var(--font-size-base)',
-                fontFamily: 'var(--font-sans)',
-                paddingLeft: '1.5rem'
-              }}>
-                <li style={{marginBottom: '0.5rem'}}>Doubled blog traffic from 80K to 200K monthly users in 6 months</li>
-                <li style={{marginBottom: '0.5rem'}}>Created high-quality developer tutorials and technical explainers as part of DevRel initiative</li>
-                <li style={{marginBottom: '0.5rem'}}>Collaborated with senior developers on technical content validation</li>
-                <li style={{marginBottom: '0.5rem'}}>Authored thought leadership content and e-books on behalf of CTO</li>
-                <li>Managed open-source blog on GitHub, producing website content, product pages, and UI text</li>
-              </ul>
-            </div>
-
-            <div style={{
-              background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.6))',
-              borderRadius: '16px 22px 18px 20px',
-              padding: 'clamp(1.25rem, 3vw, 2rem)',
-              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(6, 182, 212, 0.06)',
-              border: 'none',
-              backdropFilter: 'blur(8px)',
-              transition: 'all 0.3s ease'
-            }} className="fade-in-up">
-              <div style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'flex-start',
-                marginBottom: '1rem',
-                flexWrap: 'wrap',
-                gap: '1rem'
-              }}>
-                <div>
-                  <h3 style={{
-                    fontSize: 'var(--font-size-xl)',
-                    fontWeight: '600',
-                    color: 'var(--color-text-primary)',
-                    marginBottom: '0.5rem',
-                    fontFamily: 'var(--font-serif)'
-                  }}>
-                    Sr. Executive - Content
-                  </h3>
-                  <p style={{
-                    color: 'var(--color-accent)',
-                    fontWeight: '600',
-                    fontSize: 'var(--font-size-base)',
-                    fontFamily: 'var(--font-sans)'
-                  }}>
-                    IT Services Company Marketing BU • NOIDA
-                  </p>
-                </div>
-              </div>
-              <ul style={{
-                color: 'var(--color-text-secondary)',
-                lineHeight: 'var(--line-height-relaxed)',
-                fontSize: 'var(--font-size-base)',
-                fontFamily: 'var(--font-sans)',
-                paddingLeft: '1.5rem'
-              }}>
-                <li style={{marginBottom: '0.5rem'}}>Produced technical content for clients across US, UK, and Australia</li>
-                <li style={{marginBottom: '0.5rem'}}>Created case studies, blog posts, and thought leadership articles across IT domains</li>
-                <li>Edited client presentations and developer community contributions</li>
-              </ul>
-            </div>
-
-            <div style={{
-              background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.6))',
-              borderRadius: '16px 22px 18px 20px',
-              padding: 'clamp(1.25rem, 3vw, 2rem)',
-              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(6, 182, 212, 0.06)',
-              border: 'none',
-              backdropFilter: 'blur(8px)',
-              transition: 'all 0.3s ease'
-            }} className="fade-in-up">
-              <div style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'flex-start',
-                marginBottom: '1rem',
-                flexWrap: 'wrap',
-                gap: '1rem'
-              }}>
-                <div>
-                  <h3 style={{
-                    fontSize: 'var(--font-size-xl)',
-                    fontWeight: '600',
-                    color: 'var(--color-text-primary)',
-                    marginBottom: '0.5rem',
-                    fontFamily: 'var(--font-serif)'
-                  }}>
-                    Associate QA Analyst
-                  </h3>
-                  <p style={{
-                    color: 'var(--color-accent)',
-                    fontWeight: '600',
-                    fontSize: 'var(--font-size-base)',
-                    fontFamily: 'var(--font-sans)'
-                  }}>
-                    IT Consulting and Services Company
-                  </p>
-                </div>
-              </div>
-              <ul style={{
-                color: 'var(--color-text-secondary)',
-                lineHeight: 'var(--line-height-relaxed)',
-                fontSize: 'var(--font-size-base)',
-                fontFamily: 'var(--font-sans)',
-                paddingLeft: '1.5rem'
-              }}>
-                <li style={{marginBottom: '0.5rem'}}>Manual firmware testing of life-saving gas detection devices for mining, construction, and oil fields</li>
-                <li style={{marginBottom: '0.5rem'}}>Wrote comprehensive test cases based on technical requirements</li>
-                <li>Conducted exploratory testing to identify unconventional bugs and edge cases</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Skills Section */}
       <section style={sectionStyle}>

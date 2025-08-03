@@ -1,5 +1,4 @@
-/* Global Styles - Revolutionary Design System */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+/* Global Styles - Clean Professional Design System */
 
 :root {
   /* Typography Scale */
@@ -21,42 +20,38 @@
   --line-height-relaxed: 1.625;
   --line-height-loose: 2;
   
-  /* Modern Font System */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-mono: 'JetBrains Mono', 'SF Mono', 'Monaco', 'Fira Code', monospace;
+  /* Inter Font System */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Courier New', Courier, monospace;
   
-  /* Revolutionary Color Palette */
-  --color-primary: #0D0A1F;       /* Rich dark purple */
-  --color-secondary: #1A1532;     /* Deep purple */
-  --color-tertiary: #2D2550;      /* Medium purple */
-  --color-accent: #FF6B6B;        /* Coral red */
-  --color-accent-secondary: #4ECDC4; /* Turquoise */
-  --color-accent-tertiary: #FFE66D;  /* Golden yellow */
-  --color-electric: #00F5FF;      /* Electric cyan */
-  --color-neon: #B794F6;          /* Neon purple */
+  /* Clean Color Palette */
+  --color-primary: #1a202c;       /* Dark blue-gray */
+  --color-secondary: #2d3748;     /* Medium blue-gray */
+  --color-tertiary: #4a5568;      /* Light blue-gray */
+  --color-accent: #3182ce;        /* Professional blue */
   
-  /* Dynamic Gradients */
-  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  --gradient-dark: linear-gradient(135deg, #0D0A1F 0%, #1A1532 50%, #2D2550 100%);
-  --gradient-neon: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 50%, #FFE66D 100%);
+  /* Card Colors */
+  --color-card-1: #2d3748;
+  --color-card-2: #4a5568;
+  --color-card-3: #2b6cb0;
+  --color-card-4: #3182ce;
+  --color-card-5: #2c5282;
+  --color-card-6: #1e4a72;
   
   /* Text Colors */
-  --color-text-primary: #FFFFFF;
-  --color-text-secondary: #E6E6FA;
-  --color-text-muted: #B8B8D6;
-  --color-text-accent: #FF6B6B;
-  --color-text-electric: #00F5FF;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #e2e8f0;
+  --color-text-muted: #a0aec0;
+  --color-text-accent: #3182ce;
   
   /* Background System */
-  --color-bg-primary: #0D0A1F;
-  --color-bg-secondary: #1A1532;
-  --color-bg-tertiary: #2D2550;
-  --color-bg-card: rgba(45, 37, 80, 0.6);
+  --color-bg-primary: #1a202c;
+  --color-bg-secondary: #2d3748;
+  --color-bg-tertiary: #4a5568;
+  --color-bg-card: rgba(45, 55, 72, 0.6);
   --color-bg-glass: rgba(255, 255, 255, 0.05);
-  --color-bg-overlay: rgba(13, 10, 31, 0.8);
+  --color-bg-overlay: rgba(26, 32, 44, 0.8);
   
   /* Advanced Shadows */
   --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -77,7 +72,7 @@ body {
   font-size: var(--font-size-base);
   line-height: var(--line-height-relaxed);
   color: var(--color-text-primary);
-  background: var(--gradient-dark);
+  background: var(--color-primary);
   background-attachment: fixed;
   min-height: 100vh;
   font-weight: 400;
@@ -89,22 +84,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Animated background particles */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 20% 50%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(78, 205, 196, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 80%, rgba(255, 230, 109, 0.1) 0%, transparent 50%);
-  animation: particleFloat 20s ease-in-out infinite alternate;
-  pointer-events: none;
-  z-index: -1;
-}
 
 html {
   scroll-behavior: smooth;
@@ -130,7 +109,7 @@ html {
 .leading-loose { line-height: var(--line-height-loose); }
 
 .font-sans { font-family: var(--font-sans); }
-.font-serif { font-family: var(--font-serif); }
+.font-serif { font-family: var(--font-sans); }
 
 .text-primary { color: var(--color-text-primary); }
 .text-secondary { color: var(--color-text-secondary); }
@@ -139,7 +118,7 @@ html {
 
 /* Advanced Typography System */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 600;
   line-height: var(--line-height-tight);
   margin-bottom: 0.75em;
@@ -153,25 +132,19 @@ h1 {
   line-height: 1.1;
   margin-bottom: 0.5em;
   font-weight: 700;
-  background: var(--gradient-neon);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradient 4s ease infinite;
+  color: var(--color-text-primary);
 }
 
 h2 {
   font-size: clamp(2rem, 6vw, 3.5rem);
   line-height: 1.2;
-  background: var(--gradient-accent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-text-primary);
 }
 
 h3 {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   line-height: 1.25;
-  color: var(--color-text-electric);
+  color: var(--color-text-accent);
 }
 
 h4 {
@@ -190,35 +163,27 @@ h6 {
 }
 
 /* Special text effects */
-.gradient-text {
-  background: var(--gradient-primary);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradient 3s ease infinite;
+.accent-text {
+  color: var(--color-accent);
+  font-weight: 600;
 }
 
-.shimmer-text {
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  animation: textShimmer 2s infinite;
+.muted-text {
+  color: var(--color-text-muted);
+  opacity: 0.8;
 }
 
-.neon-text {
-  color: var(--color-electric);
-  text-shadow: 
-    0 0 5px currentColor,
-    0 0 10px currentColor,
-    0 0 15px currentColor;
+.highlight-text {
+  color: var(--color-text-primary);
+  font-weight: 600;
 }
 
 /* Improved paragraph and text styles */
 p {
   margin-bottom: 1.25em;
-  line-height: var(--line-height-relaxed);
+  line-height: 1.7;
   color: var(--color-text-secondary);
-  max-width: 75ch; /* Optimal reading length */
+  max-width: 65ch; /* Optimal reading length */
 }
 
 p:last-child {
@@ -296,12 +261,13 @@ pre code {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+  background: var(--color-accent);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent-hover);
+  background: var(--color-accent);
+  opacity: 0.8;
 }
 
 /* Animations */

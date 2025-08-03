@@ -11,6 +11,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@fontsource/inter": "^5.2.6",
     "gatsby": "^5.13.7",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",

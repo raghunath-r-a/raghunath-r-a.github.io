@@ -19,7 +19,7 @@ const Layout = ({ children, isHomePage = false }) => {
   const navStyle = {
     maxWidth: '1200px',
     margin: '0 auto',
-    padding: '0 2rem',
+    padding: '0 clamp(1rem, 5vw, 2rem)',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center'
@@ -28,15 +28,10 @@ const Layout = ({ children, isHomePage = false }) => {
   const logoStyle = {
     fontSize: 'var(--font-size-2xl)',
     fontWeight: '700',
-    fontFamily: 'var(--font-serif)',
-    background: 'var(--gradient-neon)',
-    backgroundSize: '300% 300%',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
+    fontFamily: 'var(--font-sans)',
+    color: 'var(--color-accent)',
     textDecoration: 'none',
     lineHeight: 'var(--line-height-tight)',
-    animation: 'gradient 4s ease infinite',
-    textShadow: '0 0 20px rgba(255, 107, 107, 0.3)',
     transition: 'all 0.3s ease'
   }
 
@@ -58,19 +53,8 @@ const Layout = ({ children, isHomePage = false }) => {
     padding: '0.75rem 1rem',
     borderRadius: '12px',
     lineHeight: 'var(--line-height-normal)',
-    '&::after': {
-      content: '""',
-      position: 'absolute',
-      bottom: 0,
-      left: '50%',
-      width: 0,
-      height: '2px',
-      background: 'var(--gradient-accent)',
-      transition: 'all 0.3s ease',
-      transform: 'translateX(-50%)'
-    },
     '&:hover': {
-      color: 'var(--color-text-electric)',
+      color: 'var(--color-text-accent)',
       background: 'rgba(255, 255, 255, 0.05)',
       backdropFilter: 'blur(10px)'
     }

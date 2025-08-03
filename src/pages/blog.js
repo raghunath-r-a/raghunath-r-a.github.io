@@ -20,7 +20,7 @@ const BlogPage = ({ data }) => {
 
   const titleStyle = {
     fontSize: 'clamp(var(--font-size-4xl), 6vw, var(--font-size-5xl))',
-    fontFamily: 'var(--font-serif)',
+    fontFamily: 'var(--font-sans)',
     fontWeight: '600',
     marginBottom: '1.5rem',
     lineHeight: 'var(--line-height-tight)',
@@ -45,8 +45,8 @@ const BlogPage = ({ data }) => {
   const comingSoonStyle = {
     textAlign: 'center',
     padding: 'clamp(2rem, 4vw, 3rem)',
-    background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.6))',
-    borderRadius: '18px 26px 22px 16px',
+    background: 'var(--color-bg-card)',
+    borderRadius: '12px',
     margin: '1rem 0',
     boxShadow: '0 8px 24px rgba(6, 182, 212, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
     border: 'none',
@@ -120,7 +120,7 @@ const BlogPage = ({ data }) => {
                       </div>
                       <h2 style={{
                         fontSize: 'var(--font-size-xl)',
-                        fontFamily: 'var(--font-serif)',
+                        fontFamily: 'var(--font-sans)',
                         fontWeight: '600',
                         marginBottom: '0.75rem',
                         color: 'var(--color-text-primary)',
@@ -184,9 +184,7 @@ const BlogPage = ({ data }) => {
                 fontSize: 'var(--font-size-3xl)',
                 fontFamily: 'var(--font-serif)',
                 marginBottom: '1rem',
-                background: 'linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
+                color: 'var(--color-accent)',
                 fontWeight: '600'
               }}>
                 Coming Soon
