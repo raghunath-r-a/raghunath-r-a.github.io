@@ -1,0 +1,54 @@
+.blog {
+  padding: 4rem 2rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #212529;
+  text-align: center;
+}
+
+.postList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.postListItem {
+  margin-bottom: 3rem;
+}
+
+.postTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.postTitle a {
+  text-decoration: none;
+  color: #212529;
+  transition: color 0.3s ease;
+}
+
+.postTitle a:hover {
+  color: #007bff;
+}
+
+.postMeta {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin-bottom: 1rem;
+}
+
+.postExcerpt {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #495057;
+}

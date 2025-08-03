@@ -38,43 +38,29 @@ const IndexPage = () => {
     },
   ];
 
-  const cardColors = ['card-1', 'card-2', 'card-3', 'card-4', 'card-5', 'card-6'];
-
   return (
     <Layout isHomePage={true}>
-      {/* Hero Section */}
       <section className={styles.hero}>
-        <div className={`${styles.heroContent} fade-in-up`}>
-          <h1 className={styles.title}>Raghunath Reddy</h1>
-          <p className={styles.subtitle}>
-            Leading cybersecurity program management in healthcare through
-            strategic content initiatives and cross-functional collaboration.
-            <br />
-            Sr. Cybersecurity Program Manager • Office of the CISO
-          </p>
-          <Link to="/about" className={styles.ctaButton}>
-            Discover My Story
-          </Link>
-        </div>
+        <h1 className={styles.title}>Raghunath Reddy</h1>
+        <p className={styles.subtitle}>
+          Sr. Cybersecurity Program Manager with a passion for building secure and
+          resilient systems. I specialize in leading strategic content
+          initiatives and fostering cross-functional collaboration to drive
+          security awareness and adoption.
+        </p>
+        <Link to="/about" className={styles.ctaButton}>
+          Learn More About Me
+        </Link>
       </section>
 
-      {/* Works Section */}
       <section className={styles.section}>
         <div className={styles.container}>
-          <h2 className={`${styles.sectionTitle} fade-in-up`}>
-            Featured Works
-          </h2>
-
-          <div className={`${styles.worksGrid} mobile-single-column`}>
+          <h2 className={styles.sectionTitle}>Featured Works</h2>
+          <div className={styles.worksGrid}>
             {works.map((work, index) => (
-              <div
-                key={index}
-                className={`${styles.card} ${styles[cardColors[index % cardColors.length]]} fade-in-up mobile-reduced-padding`}
-              >
-                <div>
-                  <div className={styles.cardType}>{work.type}</div>
-                  <h3 className={styles.workTitle}>{work.title}</h3>
-                </div>
+              <div key={index} className={styles.card}>
+                <p className={styles.cardType}>{work.type}</p>
+                <h3 className={styles.workTitle}>{work.title}</h3>
                 {work.type !== "Achievement" && (
                   <a
                     href={work.url}
@@ -82,7 +68,7 @@ const IndexPage = () => {
                     rel="noopener noreferrer"
                     className={styles.workLink}
                   >
-                    Read More →
+                    Read More
                   </a>
                 )}
               </div>
@@ -91,13 +77,13 @@ const IndexPage = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className={styles.ctaSection}>
-        <div className={styles.ctaContainer}>
+        <div className={styles.container}>
           <h2 className={styles.ctaTitle}>Let's Connect</h2>
           <p className={styles.ctaSubtitle}>
-            Ready to discuss cybersecurity program management or enterprise
-            security initiatives?
+            I'm always open to discussing new opportunities and collaborations.
+            Feel free to reach out if you'd like to chat about cybersecurity,
+            program management, or anything in between.
           </p>
           <Link to="/about" className={styles.ctaSecondaryButton}>
             Get In Touch

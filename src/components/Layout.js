@@ -1,116 +1,46 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { useState, useEffect } from "react";
+import { Link } from "gatsby";
+import * as styles from "./layout.module.css";
 
 const Layout = ({ children, isHomePage = false }) => {
-  const headerStyle = {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    zIndex: 1000,
-    background: 'rgba(13, 10, 31, 0.8)',
-    backdropFilter: 'blur(25px)',
-    borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-    padding: '1rem 0',
-    transition: 'all 0.3s ease',
-    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05)'
-  }
+  const [scrolled, setScrolled] = useState(false);
 
-  const navStyle = {
-    maxWidth: '1200px',
-    margin: '0 auto',
-    padding: '0 clamp(1rem, 5vw, 2rem)',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-  }
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
 
-  const logoStyle = {
-    fontSize: 'var(--font-size-2xl)',
-    fontWeight: '700',
-    fontFamily: 'var(--font-sans)',
-    color: 'var(--color-accent)',
-    textDecoration: 'none',
-    lineHeight: 'var(--line-height-tight)',
-    transition: 'all 0.3s ease'
-  }
-
-  const navLinksStyle = {
-    display: 'flex',
-    gap: '2rem',
-    alignItems: 'center',
-    flexWrap: 'wrap'
-  }
-
-  const navLinkStyle = {
-    textDecoration: 'none',
-    color: 'var(--color-text-secondary)',
-    fontWeight: '500',
-    fontSize: 'var(--font-size-base)',
-    fontFamily: 'var(--font-sans)',
-    position: 'relative',
-    transition: 'all 0.3s ease',
-    padding: '0.75rem 1rem',
-    borderRadius: '12px',
-    lineHeight: 'var(--line-height-normal)',
-    '&:hover': {
-      color: 'var(--color-text-accent)',
-      background: 'rgba(255, 255, 255, 0.05)',
-      backdropFilter: 'blur(10px)'
-    }
-  }
-
-  const mainStyle = {
-    minHeight: '100vh',
-    paddingTop: isHomePage ? '0' : '100px'
-  }
-
-  const footerStyle = {
-    background: 'var(--color-bg-secondary)',
-    backdropFilter: 'blur(10px)',
-    padding: '2rem 0 1rem',
-    textAlign: 'center',
-    borderTop: '1px solid rgba(6, 182, 212, 0.1)',
-    color: 'var(--color-text-secondary)'
-  }
-
-  const footerContentStyle = {
-    maxWidth: '1200px',
-    margin: '0 auto',
-    padding: '0 2rem'
-  }
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrolled]);
 
   return (
-    <div>
-      <header style={headerStyle}>
-        <nav style={navStyle}>
-          <Link to="/" style={logoStyle}>
+    <div className={styles.layout}>
+      <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+        <nav className={styles.nav}>
+          <Link to="/" className={styles.logo}>
             Raghunath Reddy
           </Link>
-          <div style={navLinksStyle}>
-            <Link to="/" style={navLinkStyle}>Home</Link>
-            <Link to="/about" style={navLinkStyle}>About</Link>
-            <Link to="/blog" style={navLinkStyle}>Blog</Link>
+          <div className={styles.navLinks}>
+            <Link to="/" className={styles.navLink}>Home</Link>
+            <Link to="/about" className={styles.navLink}>About</Link>
+            <Link to="/blog" className={styles.navLink}>Blog</Link>
           </div>
         </nav>
       </header>
-      
-      <main style={mainStyle}>{children}</main>
-      
-      <footer style={footerStyle}>
-        <div style={footerContentStyle}>
-          <p style={{ 
-            fontSize: 'var(--font-size-sm)', 
-            opacity: 0.8,
-            lineHeight: 'var(--line-height-normal)',
-            fontFamily: 'var(--font-sans)'
-          }}>
-            &copy; 2025 Raghunath Reddy
-          </p>
-        </div>
+
+      <main className={styles.main}>{children}</main>
+
+      <footer className={styles.footer}>
+        <p>&copy; {new Date().getFullYear()} Raghunath Reddy</p>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
