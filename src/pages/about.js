@@ -111,28 +111,28 @@ const AboutPage = () => {
 
   const skills = [
     {
-      title: "Program Management",
-      description: "Leading cross-functional cybersecurity initiatives with strategic planning and execution excellence."
+      title: "Cybersecurity Program Management",
+      description: "Leading strategic content initiatives within Office of the CISO, supporting Program Management Office objectives in healthcare security."
     },
     {
-      title: "Content Management", 
-      description: "Developing and managing security documentation, policies, and communication strategies for enterprise environments."
+      title: "Content Strategy & Management", 
+      description: "Proven track record of scaling content impact—doubled blog traffic from 80K to 200K monthly users through strategic content development."
     },
     {
-      title: "CyberSecurity Programs",
-      description: "Supporting cybersecurity initiatives through strategic content development and cross-functional collaboration."
+      title: "Cross-Functional Collaboration",
+      description: "Individual contributor role requiring coordination across cybersecurity teams, technical stakeholders, and business leadership."
     },
     {
-      title: "Business Presentations",
-      description: "PowerPoint skills for creating compelling business presentations and strategic communications."
+      title: "Business Communication",
+      description: "Expert-level PowerPoint skills for executive presentations, strategic communications, and stakeholder alignment in complex healthcare environments."
     },
     {
-      title: "Design & Prototyping",
-      description: "Intermediate Figma skills for creating user interfaces, prototypes, and design documentation."
+      title: "Visual Design & Storytelling",
+      description: "Figma proficiency for creating compelling visual narratives, comic strips from AI-generated images, and design documentation."
     },
     {
       title: "AI-Assisted Development",
-      description: "Leveraging AI tools for coding, LangChain development, and Python scripting automation."
+      description: "Developing automation proof-of-concepts using Python and LangChain, positioning for the evolving AI landscape in cybersecurity."
     }
   ]
 
@@ -143,7 +143,7 @@ const AboutPage = () => {
         <div style={containerStyle}>
           <h1 style={titleStyle} className="fade-in-up">About Me</h1>
           <p style={subtitleStyle} className="fade-in-up">
-            Leading cybersecurity initiatives through strategic content management and program excellence
+            Sr. Cybersecurity Program Manager driving healthcare security through strategic content management and cross-functional collaboration
           </p>
         </div>
       </section>
@@ -158,24 +158,28 @@ const AboutPage = () => {
               </h2>
               <div style={textContentStyle}>
                 <p style={{marginBottom: '1.5rem'}}>
-                  Currently serving as a Program Manager in the 
-                  <span style={highlightStyle}> CyberSecurity division of a leading Healthcare Company</span>, 
-                  I focus on strategic content management initiatives that strengthen our security posture. 
-                  My role bridges technical cybersecurity expertise with effective communication strategies.
+                  Currently serving as a <span style={highlightStyle}>Sr. Cybersecurity Program Manager</span> in the 
+                  Office of the CISO at a US Healthcare Company with a Global Capability Center in Hyderabad, India. 
+                  As an individual contributor, I oversee content management initiatives that strengthen our security posture 
+                  through strategic communication and cross-functional collaboration.
                 </p>
                 <p style={{marginBottom: '1.5rem'}}>
-                  In cybersecurity, protecting sensitive data and critical infrastructure 
-                  requires more than just technical solutions—it demands 
-                  <span style={highlightStyle}> clear, actionable communication</span> across all organizational levels. 
-                  I develop and manage content strategies that ensure security protocols are understood, 
-                  implemented, and maintained effectively.
+                  My journey began in <span style={highlightStyle}>quality assurance</span> for life-saving gas detection devices, 
+                  evolved through <span style={highlightStyle}>technical content creation at scale</span> (doubling blog traffic from 80K to 200K monthly users), 
+                  and now focuses on cybersecurity program management. This unique path has equipped me with both technical depth 
+                  and strategic communication expertise.
+                </p>
+                <p style={{marginBottom: '1.5rem'}}>
+                  In cybersecurity, protecting sensitive healthcare data requires more than technical solutions—it demands 
+                  <span style={highlightStyle}>clear, actionable communication</span> across all organizational levels. 
+                  I develop content strategies that ensure security protocols are understood, implemented, and maintained effectively 
+                  while supporting the broader Program Management Office objectives.
                 </p>
                 <p>
-                  My diverse background spans technical writing, business presentations, and modern development tools. 
-                  From creating compelling PowerPoint presentations to prototyping with Figma, and leveraging 
-                  <span style={highlightStyle}> AI-assisted development tools</span> including LangChain and Python scripting, 
-                  I bring a modern, technology-forward approach to cybersecurity program management that bridges 
-                  technical excellence with clear business communication.
+                  My toolkit spans business presentations, Figma for visual storytelling, and 
+                  <span style={highlightStyle}>AI-assisted development</span> with Python and LangChain for automation proof-of-concepts. 
+                  This modern, technology-forward approach bridges technical excellence with strategic business communication 
+                  in the rapidly evolving cybersecurity landscape.
                 </p>
               </div>
             </div>
@@ -241,8 +245,226 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Skills Section */}
+      {/* Experience Section */}
       <section style={{...sectionStyle, background: 'var(--color-bg-secondary)'}}>
+        <div style={containerStyle}>
+          <h2 style={sectionTitleStyle} className="fade-in-up">Professional Journey</h2>
+          
+          <div style={{
+            display: 'grid',
+            gap: '2rem',
+            marginBottom: '4rem'
+          }}>
+            <div style={{
+              background: 'var(--color-bg-card)',
+              borderRadius: '15px',
+              padding: '2rem',
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+              border: '1px solid rgba(6, 182, 212, 0.2)'
+            }} className="fade-in-up">
+              <div style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'flex-start',
+                marginBottom: '1rem',
+                flexWrap: 'wrap',
+                gap: '1rem'
+              }}>
+                <div>
+                  <h3 style={{
+                    fontSize: 'var(--font-size-xl)',
+                    fontWeight: '600',
+                    color: 'var(--color-text-primary)',
+                    marginBottom: '0.5rem',
+                    fontFamily: 'var(--font-serif)'
+                  }}>
+                    Sr. Cybersecurity Program Manager
+                  </h3>
+                  <p style={{
+                    color: 'var(--color-accent)',
+                    fontWeight: '600',
+                    fontSize: 'var(--font-size-base)',
+                    fontFamily: 'var(--font-sans)'
+                  }}>
+                    US Healthcare Company • Global Capability Center, Hyderabad
+                  </p>
+                </div>
+                <span style={{
+                  background: 'rgba(6, 182, 212, 0.15)',
+                  color: 'var(--color-accent)',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '20px',
+                  fontSize: 'var(--font-size-sm)',
+                  fontWeight: '600',
+                  fontFamily: 'var(--font-sans)'
+                }}>
+                  Current
+                </span>
+              </div>
+              <ul style={{
+                color: 'var(--color-text-secondary)',
+                lineHeight: 'var(--line-height-relaxed)',
+                fontSize: 'var(--font-size-base)',
+                fontFamily: 'var(--font-sans)',
+                paddingLeft: '1.5rem'
+              }}>
+                <li style={{marginBottom: '0.5rem'}}>Individual contributor role overseeing content management within Office of the CISO</li>
+                <li style={{marginBottom: '0.5rem'}}>Supporting Program Management Office objectives through strategic content initiatives</li>
+                <li>Cross-functional collaboration across cybersecurity teams and business stakeholders</li>
+              </ul>
+            </div>
+
+            <div style={{
+              background: 'var(--color-bg-card)',
+              borderRadius: '15px',
+              padding: '2rem',
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+              border: '1px solid rgba(6, 182, 212, 0.2)'
+            }} className="fade-in-up">
+              <div style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'flex-start',
+                marginBottom: '1rem',
+                flexWrap: 'wrap',
+                gap: '1rem'
+              }}>
+                <div>
+                  <h3 style={{
+                    fontSize: 'var(--font-size-xl)',
+                    fontWeight: '600',
+                    color: 'var(--color-text-primary)',
+                    marginBottom: '0.5rem',
+                    fontFamily: 'var(--font-serif)'
+                  }}>
+                    Sr. Content Engineer
+                  </h3>
+                  <p style={{
+                    color: 'var(--color-accent)',
+                    fontWeight: '600',
+                    fontSize: 'var(--font-size-base)',
+                    fontFamily: 'var(--font-sans)'
+                  }}>
+                    CIAM Company • Hyderabad
+                  </p>
+                </div>
+              </div>
+              <ul style={{
+                color: 'var(--color-text-secondary)',
+                lineHeight: 'var(--line-height-relaxed)',
+                fontSize: 'var(--font-size-base)',
+                fontFamily: 'var(--font-sans)',
+                paddingLeft: '1.5rem'
+              }}>
+                <li style={{marginBottom: '0.5rem'}}>Doubled blog traffic from 80K to 200K monthly users in 6 months</li>
+                <li style={{marginBottom: '0.5rem'}}>Created high-quality developer tutorials and technical explainers as part of DevRel initiative</li>
+                <li style={{marginBottom: '0.5rem'}}>Collaborated with senior developers on technical content validation</li>
+                <li style={{marginBottom: '0.5rem'}}>Authored thought leadership content and e-books on behalf of CTO</li>
+                <li>Managed open-source blog on GitHub, producing website content, product pages, and UI text</li>
+              </ul>
+            </div>
+
+            <div style={{
+              background: 'var(--color-bg-card)',
+              borderRadius: '15px',
+              padding: '2rem',
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+              border: '1px solid rgba(6, 182, 212, 0.2)'
+            }} className="fade-in-up">
+              <div style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'flex-start',
+                marginBottom: '1rem',
+                flexWrap: 'wrap',
+                gap: '1rem'
+              }}>
+                <div>
+                  <h3 style={{
+                    fontSize: 'var(--font-size-xl)',
+                    fontWeight: '600',
+                    color: 'var(--color-text-primary)',
+                    marginBottom: '0.5rem',
+                    fontFamily: 'var(--font-serif)'
+                  }}>
+                    Sr. Executive - Content
+                  </h3>
+                  <p style={{
+                    color: 'var(--color-accent)',
+                    fontWeight: '600',
+                    fontSize: 'var(--font-size-base)',
+                    fontFamily: 'var(--font-sans)'
+                  }}>
+                    IT Services Company Marketing BU • NOIDA
+                  </p>
+                </div>
+              </div>
+              <ul style={{
+                color: 'var(--color-text-secondary)',
+                lineHeight: 'var(--line-height-relaxed)',
+                fontSize: 'var(--font-size-base)',
+                fontFamily: 'var(--font-sans)',
+                paddingLeft: '1.5rem'
+              }}>
+                <li style={{marginBottom: '0.5rem'}}>Produced technical content for clients across US, UK, and Australia</li>
+                <li style={{marginBottom: '0.5rem'}}>Created case studies, blog posts, and thought leadership articles across IT domains</li>
+                <li>Edited client presentations and developer community contributions</li>
+              </ul>
+            </div>
+
+            <div style={{
+              background: 'var(--color-bg-card)',
+              borderRadius: '15px',
+              padding: '2rem',
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+              border: '1px solid rgba(6, 182, 212, 0.2)'
+            }} className="fade-in-up">
+              <div style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'flex-start',
+                marginBottom: '1rem',
+                flexWrap: 'wrap',
+                gap: '1rem'
+              }}>
+                <div>
+                  <h3 style={{
+                    fontSize: 'var(--font-size-xl)',
+                    fontWeight: '600',
+                    color: 'var(--color-text-primary)',
+                    marginBottom: '0.5rem',
+                    fontFamily: 'var(--font-serif)'
+                  }}>
+                    Associate QA Analyst
+                  </h3>
+                  <p style={{
+                    color: 'var(--color-accent)',
+                    fontWeight: '600',
+                    fontSize: 'var(--font-size-base)',
+                    fontFamily: 'var(--font-sans)'
+                  }}>
+                    IT Consulting and Services Company
+                  </p>
+                </div>
+              </div>
+              <ul style={{
+                color: 'var(--color-text-secondary)',
+                lineHeight: 'var(--line-height-relaxed)',
+                fontSize: 'var(--font-size-base)',
+                fontFamily: 'var(--font-sans)',
+                paddingLeft: '1.5rem'
+              }}>
+                <li style={{marginBottom: '0.5rem'}}>Manual firmware testing of life-saving gas detection devices for mining, construction, and oil fields</li>
+                <li style={{marginBottom: '0.5rem'}}>Wrote comprehensive test cases based on technical requirements</li>
+                <li>Conducted exploratory testing to identify unconventional bugs and edge cases</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section style={sectionStyle}>
         <div style={containerStyle}>
           <h2 style={sectionTitleStyle} className="fade-in-up">What I Do Best</h2>
           
@@ -290,6 +512,6 @@ export default AboutPage
 export const Head = () => (
   <>
     <title>About Me - Raghunath Reddy</title>
-    <meta name="description" content="Learn more about Raghunath Reddy" />
+    <meta name="description" content="Sr. Cybersecurity Program Manager with proven track record in content strategy, doubled blog traffic from 80K to 200K users, B.Tech Computer Science" />
   </>
 )

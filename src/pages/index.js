@@ -140,6 +140,11 @@ const IndexPage = () => {
 
   const works = [
     {
+      type: "Achievement",
+      title: "Doubled Blog Traffic: 80K to 200K Monthly Users in 6 Months",
+      url: "https://github.com/raghunath-r-a"
+    },
+    {
       type: "eBook",
       title: "Data Privacy: What Enterprises Need to Know?",
       url: "https://books2read.com/u/3k2eyK"
@@ -163,11 +168,6 @@ const IndexPage = () => {
       type: "Technical Blog",
       title: "What is Risk-Based Authentication? And Why Should You Implement It?",
       url: "https://www.loginradius.com/blog/engineering/risk-based-authentication/"
-    },
-    {
-      type: "Technical Blog",
-      title: "How Chrome's Third-Party Cookie Restrictions Affect User Authentication?",
-      url: "https://www.loginradius.com/blog/engineering/identity-impact-of-google-chrome-thirdparty-cookie-restrictions/"
     }
   ]
 
@@ -182,8 +182,8 @@ const IndexPage = () => {
         <div style={heroContentStyle} className="fade-in-up">
           <h1 style={titleStyle}>Raghunath Reddy</h1>
           <p style={subtitleStyle}>
-            Driving cybersecurity excellence through strategic content management.<br/>
-            Program Manager • CyberSecurity
+            Leading cybersecurity program management in healthcare through strategic content initiatives and cross-functional collaboration.<br/>
+            Sr. Cybersecurity Program Manager • Office of the CISO
           </p>
           <Link 
             to="/about" 
@@ -291,7 +291,7 @@ export default IndexPage
 
 export const Head = () => (
   <>
-    <title>Raghunath Reddy - Portfolio</title>
-    <meta name="description" content="Technical Content Writer, Editor, and Product Marketer" />
+    <title>Raghunath Reddy - Sr. Cybersecurity Program Manager</title>
+    <meta name="description" content="Sr. Cybersecurity Program Manager in healthcare, leading strategic content initiatives within Office of the CISO" />
   </>
 )

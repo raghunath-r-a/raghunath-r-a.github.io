@@ -242,7 +242,7 @@ export default BlogPage
 export const Head = () => (
   <>
     <title>Blog - Raghunath Reddy</title>
-    <meta name="description" content="Insights on cybersecurity program management, AI-assisted development, and strategic communication by Raghunath Reddy" />
+    <meta name="description" content="Coming soon: Insights on cybersecurity program management, AI-assisted development, and strategic communication in healthcare security" />
   </>
 )
 
