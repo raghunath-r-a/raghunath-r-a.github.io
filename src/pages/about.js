@@ -41,6 +41,9 @@ const AboutPage = () => {
               strategic business communication in the rapidly evolving
               cybersecurity landscape.
             </p>
+			<p>
+				I'm always open to discussing new opportunities and collaborations. Feel free to reach out to me at <a href="mailto:raghunath-r-a@getburner.email">raghunath-r-a@getburner.email</a>.
+			</p>
           </div>
         </div>
       </section>
