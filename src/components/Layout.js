@@ -8,11 +8,12 @@ const Layout = ({ children, isHomePage = false }) => {
     left: 0,
     right: 0,
     zIndex: 1000,
-    background: 'var(--color-bg-overlay)',
-    backdropFilter: 'blur(20px)',
-    borderBottom: '1px solid rgba(6, 182, 212, 0.1)',
-    padding: '1.25rem 0',
-    transition: 'all 0.3s ease'
+    background: 'rgba(13, 10, 31, 0.8)',
+    backdropFilter: 'blur(25px)',
+    borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+    padding: '1rem 0',
+    transition: 'all 0.3s ease',
+    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05)'
   }
 
   const navStyle = {
@@ -26,13 +27,17 @@ const Layout = ({ children, isHomePage = false }) => {
 
   const logoStyle = {
     fontSize: 'var(--font-size-2xl)',
-    fontWeight: '600',
+    fontWeight: '700',
     fontFamily: 'var(--font-serif)',
-    background: 'linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%)',
+    background: 'var(--gradient-neon)',
+    backgroundSize: '300% 300%',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     textDecoration: 'none',
-    lineHeight: 'var(--line-height-tight)'
+    lineHeight: 'var(--line-height-tight)',
+    animation: 'gradient 4s ease infinite',
+    textShadow: '0 0 20px rgba(255, 107, 107, 0.3)',
+    transition: 'all 0.3s ease'
   }
 
   const navLinksStyle = {
@@ -44,14 +49,31 @@ const Layout = ({ children, isHomePage = false }) => {
 
   const navLinkStyle = {
     textDecoration: 'none',
-    color: 'var(--color-text-primary)',
+    color: 'var(--color-text-secondary)',
     fontWeight: '500',
     fontSize: 'var(--font-size-base)',
     fontFamily: 'var(--font-sans)',
     position: 'relative',
-    transition: 'color 0.3s ease',
-    padding: '0.5rem 0',
-    lineHeight: 'var(--line-height-normal)'
+    transition: 'all 0.3s ease',
+    padding: '0.75rem 1rem',
+    borderRadius: '12px',
+    lineHeight: 'var(--line-height-normal)',
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      bottom: 0,
+      left: '50%',
+      width: 0,
+      height: '2px',
+      background: 'var(--gradient-accent)',
+      transition: 'all 0.3s ease',
+      transform: 'translateX(-50%)'
+    },
+    '&:hover': {
+      color: 'var(--color-text-electric)',
+      background: 'rgba(255, 255, 255, 0.05)',
+      backdropFilter: 'blur(10px)'
+    }
   }
 
   const mainStyle = {

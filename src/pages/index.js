@@ -5,63 +5,104 @@ import Layout from "../components/Layout"
 const IndexPage = () => {
   const heroStyle = {
     minHeight: '100vh',
-    display: 'flex',
+    display: 'grid',
+    gridTemplateColumns: '1fr 400px 1fr',
+    gridTemplateRows: '1fr auto 1fr',
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
     position: 'relative',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    background: 'radial-gradient(ellipse at center, rgba(255, 107, 107, 0.1) 0%, transparent 70%)',
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      top: '-50%',
+      left: '-50%',
+      width: '200%',
+      height: '200%',
+      background: 'conic-gradient(from 0deg, transparent, rgba(78, 205, 196, 0.1), transparent, rgba(255, 230, 109, 0.1), transparent)',
+      animation: 'spin 20s linear infinite',
+      zIndex: 0
+    }
   }
 
   const heroContentStyle = {
-    maxWidth: '800px',
+    gridColumn: '2',
+    gridRow: '2',
+    maxWidth: 'none',
     padding: '0 2rem',
-    zIndex: 2,
-    position: 'relative'
+    zIndex: 10,
+    position: 'relative',
+    background: 'var(--color-bg-glass)',
+    backdropFilter: 'blur(20px)',
+    borderRadius: '32px',
+    border: '1px solid rgba(255, 255, 255, 0.1)',
+    padding: 'clamp(2rem, 5vw, 4rem)',
+    boxShadow: 'var(--shadow-strong), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
   }
 
   const titleStyle = {
-    fontSize: 'clamp(var(--font-size-5xl), 8vw, var(--font-size-6xl))',
+    fontSize: 'clamp(2.5rem, 6vw, 4rem)',
     fontFamily: 'var(--font-serif)',
-    fontWeight: '600',
-    background: 'linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.9) 100%)',
+    fontWeight: '700',
+    background: 'var(--gradient-neon)',
+    backgroundSize: '300% 300%',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     marginBottom: '1.5rem',
     lineHeight: 'var(--line-height-tight)',
-    letterSpacing: '-0.02em'
+    letterSpacing: '-0.03em',
+    animation: 'gradient 4s ease infinite, textShimmer 3s ease infinite',
+    textShadow: '0 0 30px rgba(255, 107, 107, 0.3)'
   }
 
   const subtitleStyle = {
-    fontSize: 'clamp(var(--font-size-lg), 3vw, var(--font-size-2xl))',
-    color: 'rgba(255, 255, 255, 0.95)',
-    marginBottom: '2rem',
+    fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
+    color: 'var(--color-text-secondary)',
+    marginBottom: '2.5rem',
     fontWeight: '400',
     lineHeight: 'var(--line-height-relaxed)',
     fontFamily: 'var(--font-sans)',
-    maxWidth: '600px',
-    margin: '0 auto 2rem'
+    opacity: 0.9,
+    textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
   }
 
   const ctaButtonStyle = {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: '1.25rem 3rem',
-    background: 'rgba(255, 255, 255, 0.1)',
+    padding: '1rem 2.5rem',
+    background: 'var(--gradient-accent)',
+    backgroundSize: '300% 300%',
     backdropFilter: 'blur(20px)',
-    border: '1px solid rgba(255, 255, 255, 0.2)',
-    borderRadius: '60px',
+    border: '2px solid transparent',
+    borderRadius: '50px',
     color: 'white',
     textDecoration: 'none',
-    fontWeight: '500',
-    fontSize: 'clamp(var(--font-size-base), 2.5vw, var(--font-size-lg))',
+    fontWeight: '600',
+    fontSize: 'var(--font-size-base)',
     fontFamily: 'var(--font-sans)',
     lineHeight: 'var(--line-height-normal)',
     transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
     cursor: 'pointer',
     minHeight: '56px',
-    letterSpacing: '0.025em'
+    letterSpacing: '0.05em',
+    textTransform: 'uppercase',
+    position: 'relative',
+    overflow: 'hidden',
+    animation: 'gradient 3s ease infinite, glow 2s ease-in-out infinite alternate',
+    boxShadow: '0 8px 32px rgba(255, 107, 107, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
+    '&::before': {
+      content: '\"\"',
+      position: 'absolute',
+      top: 0,
+      left: '-100%',
+      width: '100%',
+      height: '100%',
+      background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent)',
+      transition: 'left 0.5s ease'
+    }
   }
 
   const sectionStyle = {
@@ -97,22 +138,49 @@ const IndexPage = () => {
     justifyContent: 'center'
   }
 
-  const getCardStyle = (index) => ({
-    background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.6))',
-    borderRadius: `${12 + (index % 3) * 4}px ${16 + (index % 2) * 6}px ${14 + (index % 4) * 3}px ${13 + (index % 3) * 5}px`,
-    padding: 'clamp(1.25rem, 3vw, 2rem)',
-    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(6, 182, 212, 0.06)',
-    border: 'none',
-    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-    cursor: 'pointer',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    backdropFilter: 'blur(8px)',
-    flex: '1 1 calc(33.333% - 1rem)',
-    minWidth: '280px',
-    maxWidth: '400px'
-  })
+  const getCardStyle = (index) => {
+    const colors = [
+      'var(--gradient-primary)',
+      'var(--gradient-secondary)', 
+      'var(--gradient-accent)',
+      'var(--gradient-neon)',
+      'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+    ];
+    
+    return {
+      background: `${colors[index % colors.length]}`,
+      backgroundSize: '300% 300%',
+      borderRadius: '24px',
+      padding: 'clamp(1.5rem, 3vw, 2.5rem)',
+      boxShadow: 'var(--shadow-strong), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+      border: '1px solid rgba(255, 255, 255, 0.1)',
+      transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+      cursor: 'pointer',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      backdropFilter: 'blur(20px)',
+      flex: '1 1 calc(33.333% - 1rem)',
+      minWidth: '320px',
+      maxWidth: '420px',
+      position: 'relative',
+      overflow: 'hidden',
+      animation: `gradient 6s ease infinite, morphShape ${8 + index}s ease-in-out infinite`,
+      '&::before': {
+        content: '\"\"',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: 'rgba(255, 255, 255, 0.05)',
+        backdropFilter: 'blur(1px)',
+        borderRadius: 'inherit',
+        zIndex: 1
+      }
+    }
+  }
 
   const workTitleStyle = {
     fontSize: 'var(--font-size-xl)',
@@ -192,14 +260,16 @@ const IndexPage = () => {
             to="/about" 
             style={ctaButtonStyle}
             onMouseEnter={(e) => {
-              e.target.style.background = 'rgba(255, 255, 255, 0.2)'
-              e.target.style.transform = 'translateY(-3px) scale(1.02)'
-              e.target.style.boxShadow = '0 12px 32px rgba(6, 182, 212, 0.3)'
+              e.target.style.transform = 'translateY(-8px) scale(1.05)'
+              e.target.style.boxShadow = '0 20px 60px rgba(255, 107, 107, 0.4), 0 0 40px rgba(78, 205, 196, 0.3)'
+              e.target.style.backgroundSize = '400% 400%'
+              e.target.style.filter = 'brightness(1.2) saturate(1.3)'
             }}
             onMouseLeave={(e) => {
-              e.target.style.background = 'rgba(255, 255, 255, 0.1)'
               e.target.style.transform = 'translateY(0) scale(1)'
-              e.target.style.boxShadow = 'none'
+              e.target.style.boxShadow = '0 8px 32px rgba(255, 107, 107, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+              e.target.style.backgroundSize = '300% 300%'
+              e.target.style.filter = 'brightness(1) saturate(1)'
             }}
           >
             Discover My Story
@@ -219,12 +289,18 @@ const IndexPage = () => {
                 style={getCardStyle(index)}
                 className="fade-in-up mobile-reduced-padding"
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-6px) scale(1.01)'
-                  e.currentTarget.style.boxShadow = '0 12px 32px rgba(6, 182, 212, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08)'
+                  e.currentTarget.style.transform = 'translateY(-15px) rotateX(5deg) rotateY(5deg) scale(1.05)'
+                  e.currentTarget.style.boxShadow = '0 30px 60px rgba(255, 107, 107, 0.3), 0 0 50px rgba(78, 205, 196, 0.2)'
+                  e.currentTarget.style.backgroundSize = '400% 400%'
+                  e.currentTarget.style.filter = 'brightness(1.3) saturate(1.4) contrast(1.1)'
+                  e.currentTarget.style.zIndex = '10'
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0) scale(1)'
-                  e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(6, 182, 212, 0.06)'
+                  e.currentTarget.style.transform = 'translateY(0) rotateX(0deg) rotateY(0deg) scale(1)'
+                  e.currentTarget.style.boxShadow = 'var(--shadow-strong), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+                  e.currentTarget.style.backgroundSize = '300% 300%'
+                  e.currentTarget.style.filter = 'brightness(1) saturate(1) contrast(1)'
+                  e.currentTarget.style.zIndex = '1'
                 }}
               >
                 <div>
