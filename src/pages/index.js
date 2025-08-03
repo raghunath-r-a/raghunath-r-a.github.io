@@ -66,7 +66,7 @@ const IndexPage = () => {
 
   const sectionStyle = {
     background: 'var(--color-bg-primary)',
-    padding: '6rem 0 8rem',
+    padding: '3rem 0 4rem',
     position: 'relative'
   }
 
@@ -81,7 +81,7 @@ const IndexPage = () => {
     fontFamily: 'var(--font-serif)',
     fontWeight: '600',
     textAlign: 'center',
-    marginBottom: '3rem',
+    marginBottom: '2rem',
     background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
@@ -90,27 +90,29 @@ const IndexPage = () => {
   }
 
   const worksGridStyle = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-    gap: 'clamp(1.5rem, 4vw, 3rem)',
-    marginBottom: '4rem',
-    alignItems: 'stretch'
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: 'clamp(1rem, 2.5vw, 1.5rem)',
+    marginBottom: '2rem',
+    justifyContent: 'center'
   }
 
-  const workCardStyle = {
-    background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.8))',
-    borderRadius: '24px',
-    padding: 'clamp(1.5rem, 4vw, 2.5rem)',
-    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(6, 182, 212, 0.08)',
-    border: '1px solid rgba(6, 182, 212, 0.1)',
+  const getCardStyle = (index) => ({
+    background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.6))',
+    borderRadius: `${12 + (index % 3) * 4}px ${16 + (index % 2) * 6}px ${14 + (index % 4) * 3}px ${13 + (index % 3) * 5}px`,
+    padding: 'clamp(1.25rem, 3vw, 2rem)',
+    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(6, 182, 212, 0.06)',
+    border: 'none',
     transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
     cursor: 'pointer',
-    height: '100%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    backdropFilter: 'blur(10px)'
-  }
+    backdropFilter: 'blur(8px)',
+    flex: '1 1 calc(33.333% - 1rem)',
+    minWidth: '280px',
+    maxWidth: '400px'
+  })
 
   const workTitleStyle = {
     fontSize: 'var(--font-size-xl)',
@@ -214,15 +216,15 @@ const IndexPage = () => {
             {works.map((work, index) => (
               <div 
                 key={index}
-                style={workCardStyle}
+                style={getCardStyle(index)}
                 className="fade-in-up mobile-reduced-padding"
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-8px) scale(1.02)'
-                  e.currentTarget.style.boxShadow = '0 24px 48px rgba(6, 182, 212, 0.2), 0 8px 24px rgba(0, 0, 0, 0.1)'
+                  e.currentTarget.style.transform = 'translateY(-6px) scale(1.01)'
+                  e.currentTarget.style.boxShadow = '0 12px 32px rgba(6, 182, 212, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08)'
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0) scale(1)'
-                  e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(6, 182, 212, 0.08)'
+                  e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(6, 182, 212, 0.06)'
                 }}
               >
                 <div>
@@ -259,19 +261,19 @@ const IndexPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section style={{...sectionStyle, background: 'linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%)', color: 'var(--color-text-primary)', border: '1px solid rgba(6, 182, 212, 0.3)'}}>
+      <section style={{...sectionStyle, background: 'linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%)', color: 'var(--color-text-primary)', border: 'none', padding: '2rem 0 3rem'}}>
         <div style={{...containerStyle, textAlign: 'center'}}>
-          <h2 style={{...sectionTitleStyle, color: 'var(--color-text-primary)', marginBottom: '2rem'}}>
+          <h2 style={{...sectionTitleStyle, color: 'var(--color-text-primary)', marginBottom: '1rem'}}>
             Let's Strengthen Security Together
           </h2>
           <p style={{ 
-            fontSize: 'var(--font-size-xl)', 
-            marginBottom: '2rem', 
+            fontSize: 'var(--font-size-lg)', 
+            marginBottom: '1.5rem', 
             opacity: 0.95,
             fontFamily: 'var(--font-sans)',
             lineHeight: 'var(--line-height-relaxed)',
-            maxWidth: '600px',
-            margin: '0 auto 2rem'
+            maxWidth: '500px',
+            margin: '0 auto 1.5rem'
           }}>
             Ready to discuss cybersecurity program management or enterprise security initiatives?
           </p>

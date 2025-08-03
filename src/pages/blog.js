@@ -38,19 +38,19 @@ const BlogPage = ({ data }) => {
   }
 
   const sectionStyle = {
-    padding: 'clamp(4rem, 8vw, 8rem) 0',
+    padding: 'clamp(2rem, 4vw, 3rem) 0',
     background: 'var(--color-bg-primary)'
   }
 
   const comingSoonStyle = {
     textAlign: 'center',
-    padding: 'clamp(3rem, 6vw, 5rem)',
-    background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.8))',
-    borderRadius: '32px',
-    margin: '3rem 0',
-    boxShadow: '0 16px 40px rgba(6, 182, 212, 0.1), 0 4px 16px rgba(0, 0, 0, 0.1)',
-    border: '1px solid rgba(6, 182, 212, 0.1)',
-    backdropFilter: 'blur(20px)'
+    padding: 'clamp(2rem, 4vw, 3rem)',
+    background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.6))',
+    borderRadius: '18px 26px 22px 16px',
+    margin: '1rem 0',
+    boxShadow: '0 8px 24px rgba(6, 182, 212, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06)',
+    border: 'none',
+    backdropFilter: 'blur(12px)'
   }
 
   const blogGridStyle = {

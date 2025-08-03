@@ -56,15 +56,15 @@ const Layout = ({ children, isHomePage = false }) => {
 
   const mainStyle = {
     minHeight: '100vh',
-    paddingTop: isHomePage ? '0' : '120px'
+    paddingTop: isHomePage ? '0' : '100px'
   }
 
   const footerStyle = {
     background: 'var(--color-bg-secondary)',
     backdropFilter: 'blur(10px)',
-    padding: '3rem 0 2rem',
+    padding: '2rem 0 1rem',
     textAlign: 'center',
-    borderTop: '1px solid rgba(6, 182, 212, 0.3)',
+    borderTop: '1px solid rgba(6, 182, 212, 0.1)',
     color: 'var(--color-text-secondary)'
   }
 

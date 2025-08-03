@@ -279,69 +279,74 @@ pre code {
   animation: float 3s ease-in-out infinite;
 }
 
-/* Responsive Design Improvements */
+/* Organic, flowing design utilities */
+section {
+  transition: all 0.3s ease;
+}
+
+/* Blend sections with subtle transitions */
+section:not(:first-child) {
+  margin-top: -1px;
+}
+
+/* Enhanced Mobile Optimizations */
 @media (max-width: 768px) {
-  /* Container adjustments */
-  .container, [style*="maxWidth: '1200px'"], [style*="maxWidth: '800px'"] {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+  /* Tighter container spacing */
+  .container, [style*="maxWidth: '1200px'"], [style*="maxWidth: '1400px'"] {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
   }
   
-  /* Grid adjustments for mobile */
+  /* Compact mobile layouts */
   .mobile-single-column {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
   }
   
-  /* Text size adjustments */
-  h1 {
-    font-size: var(--font-size-4xl) !important;
-  }
-  
-  h2 {
-    font-size: var(--font-size-3xl) !important;
-  }
-  
-  h3 {
-    font-size: var(--font-size-2xl) !important;
-  }
-  
-  /* Card padding adjustments */
+  /* Reduced mobile padding */
   .mobile-reduced-padding {
-    padding: 1.5rem !important;
+    padding: 1rem !important;
   }
   
-  /* Blog post content improvements */
-  article[style*="padding: '3rem'"] {
-    padding: 1.5rem !important;
+  /* Tighter section spacing */
+  section {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
   }
   
   /* Navigation adjustments */
   nav[style*="display: flex"] {
     flex-direction: column !important;
-    gap: 1rem !important;
+    gap: 0.75rem !important;
     text-align: center !important;
   }
   
-  nav[style*="display: flex"] > div:last-child {
-    gap: 1rem !important;
+  /* Flex layout optimizations */
+  [style*="display: flex"][style*="flexWrap: 'wrap'"] {
+    gap: 0.75rem !important;
   }
 }
 
 @media (max-width: 480px) {
-  /* Extra small screen adjustments */
-  .container, [style*="maxWidth: '1200px'"], [style*="maxWidth: '800px'"] {
-    padding-left: 0.75rem !important;
-    padding-right: 0.75rem !important;
+  /* Ultra-compact for small screens */
+  .container, [style*="maxWidth: '1200px'"], [style*="maxWidth: '1400px'"] {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
   }
   
   .mobile-reduced-padding {
-    padding: 1rem !important;
+    padding: 0.75rem !important;
   }
   
-  /* Blog post extra compact */
-  article[style*="padding: '3rem'"] {
-    padding: 1rem !important;
+  /* Minimal section spacing */
+  section {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  
+  /* Compact flex gaps */
+  [style*="display: flex"][style*="flexWrap: 'wrap'"] {
+    gap: 0.5rem !important;
   }
   
   /* Button adjustments */

@@ -35,16 +35,16 @@ const AboutPage = () => {
   }
 
   const sectionStyle = {
-    padding: 'clamp(4rem, 8vw, 8rem) 0',
+    padding: 'clamp(2rem, 4vw, 3rem) 0',
     background: 'var(--color-bg-primary)'
   }
 
   const contentGridStyle = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-    gap: 'clamp(3rem, 6vw, 6rem)',
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: 'clamp(1.5rem, 3vw, 2.5rem)',
     alignItems: 'start',
-    marginBottom: '2rem'
+    marginBottom: '1rem'
   }
 
   const textContentStyle = {
@@ -63,27 +63,29 @@ const AboutPage = () => {
   }
 
   const skillsGridStyle = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-    gap: 'clamp(1.5rem, 4vw, 3rem)',
-    marginTop: '4rem',
-    alignItems: 'stretch'
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: 'clamp(1rem, 2.5vw, 1.5rem)',
+    marginTop: '2rem',
+    justifyContent: 'center'
   }
 
-  const skillCardStyle = {
-    background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.8))',
-    borderRadius: '24px',
-    padding: 'clamp(1.5rem, 4vw, 2.5rem)',
-    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(6, 182, 212, 0.08)',
-    border: '1px solid rgba(6, 182, 212, 0.1)',
+  const getSkillCardStyle = (index) => ({
+    background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.6))',
+    borderRadius: `${14 + (index % 2) * 3}px ${18 + (index % 3) * 4}px ${16 + (index % 4) * 2}px ${15 + (index % 2) * 4}px`,
+    padding: 'clamp(1.25rem, 3vw, 2rem)',
+    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(6, 182, 212, 0.06)',
+    border: 'none',
     textAlign: 'left',
     transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-    height: '100%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
-    backdropFilter: 'blur(10px)'
-  }
+    backdropFilter: 'blur(8px)',
+    flex: '1 1 calc(50% - 0.75rem)',
+    minWidth: '280px',
+    maxWidth: '450px'
+  })
 
   const skillIconStyle = {
     width: '60px',
@@ -154,8 +156,8 @@ const AboutPage = () => {
       <section style={sectionStyle}>
         <div style={containerStyle}>
           <div style={contentGridStyle}>
-            <div className="fade-in-up">
-              <h2 style={{...sectionTitleStyle, textAlign: 'left', marginBottom: '2rem'}}>
+            <div className="fade-in-up" style={{flex: '1 1 400px', minWidth: '350px'}}>
+              <h2 style={{...sectionTitleStyle, textAlign: 'left', marginBottom: '1.5rem'}}>
                 My Story
               </h2>
               <div style={textContentStyle}>
@@ -187,14 +189,16 @@ const AboutPage = () => {
             </div>
             
             <div className="fade-in-up" style={{
-              background: 'linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9))',
-              borderRadius: '32px',
-              padding: 'clamp(2rem, 5vw, 3.5rem)',
+              background: 'linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.8))',
+              borderRadius: '20px 28px 24px 18px',
+              padding: 'clamp(1.5rem, 4vw, 2.5rem)',
               color: 'var(--color-text-primary)',
               textAlign: 'center',
-              border: '1px solid rgba(6, 182, 212, 0.3)',
-              backdropFilter: 'blur(20px)',
-              boxShadow: '0 16px 40px rgba(6, 182, 212, 0.1)'
+              border: 'none',
+              backdropFilter: 'blur(12px)',
+              boxShadow: '0 8px 24px rgba(6, 182, 212, 0.08)',
+              flex: '1 1 300px',
+              minWidth: '280px'
             }}>
               <h3 style={{
                 fontSize: 'var(--font-size-2xl)', 
@@ -255,17 +259,18 @@ const AboutPage = () => {
           <h2 style={sectionTitleStyle} className="fade-in-up">Professional Journey</h2>
           
           <div style={{
-            display: 'grid',
-            gap: 'clamp(1.5rem, 4vw, 3rem)',
-            marginBottom: '5rem'
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 'clamp(1rem, 2.5vw, 1.5rem)',
+            marginBottom: '2rem'
           }}>
             <div style={{
-              background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.8))',
-              borderRadius: '24px',
-              padding: 'clamp(1.5rem, 4vw, 2.5rem)',
-              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(6, 182, 212, 0.08)',
-              border: '1px solid rgba(6, 182, 212, 0.1)',
-              backdropFilter: 'blur(10px)',
+              background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.6))',
+              borderRadius: '16px 22px 18px 20px',
+              padding: 'clamp(1.25rem, 3vw, 2rem)',
+              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(6, 182, 212, 0.06)',
+              border: 'none',
+              backdropFilter: 'blur(8px)',
               transition: 'all 0.3s ease'
             }} className="fade-in-up">
               <div style={{
@@ -321,12 +326,12 @@ const AboutPage = () => {
             </div>
 
             <div style={{
-              background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.8))',
-              borderRadius: '24px',
-              padding: 'clamp(1.5rem, 4vw, 2.5rem)',
-              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(6, 182, 212, 0.08)',
-              border: '1px solid rgba(6, 182, 212, 0.1)',
-              backdropFilter: 'blur(10px)',
+              background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.6))',
+              borderRadius: '16px 22px 18px 20px',
+              padding: 'clamp(1.25rem, 3vw, 2rem)',
+              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(6, 182, 212, 0.06)',
+              border: 'none',
+              backdropFilter: 'blur(8px)',
               transition: 'all 0.3s ease'
             }} className="fade-in-up">
               <div style={{
@@ -373,12 +378,12 @@ const AboutPage = () => {
             </div>
 
             <div style={{
-              background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.8))',
-              borderRadius: '24px',
-              padding: 'clamp(1.5rem, 4vw, 2.5rem)',
-              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(6, 182, 212, 0.08)',
-              border: '1px solid rgba(6, 182, 212, 0.1)',
-              backdropFilter: 'blur(10px)',
+              background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.6))',
+              borderRadius: '16px 22px 18px 20px',
+              padding: 'clamp(1.25rem, 3vw, 2rem)',
+              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(6, 182, 212, 0.06)',
+              border: 'none',
+              backdropFilter: 'blur(8px)',
               transition: 'all 0.3s ease'
             }} className="fade-in-up">
               <div style={{
@@ -423,12 +428,12 @@ const AboutPage = () => {
             </div>
 
             <div style={{
-              background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.8))',
-              borderRadius: '24px',
-              padding: 'clamp(1.5rem, 4vw, 2.5rem)',
-              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(6, 182, 212, 0.08)',
-              border: '1px solid rgba(6, 182, 212, 0.1)',
-              backdropFilter: 'blur(10px)',
+              background: 'linear-gradient(145deg, var(--color-bg-card), rgba(30, 41, 59, 0.6))',
+              borderRadius: '16px 22px 18px 20px',
+              padding: 'clamp(1.25rem, 3vw, 2rem)',
+              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(6, 182, 212, 0.06)',
+              border: 'none',
+              backdropFilter: 'blur(8px)',
               transition: 'all 0.3s ease'
             }} className="fade-in-up">
               <div style={{
@@ -484,15 +489,15 @@ const AboutPage = () => {
             {skills.map((skill, index) => (
               <div 
                 key={index}
-                style={skillCardStyle}
+                style={getSkillCardStyle(index)}
                 className="fade-in-up mobile-reduced-padding"
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-8px) scale(1.02)'
-                  e.currentTarget.style.boxShadow = '0 20px 48px rgba(6, 182, 212, 0.15), 0 8px 24px rgba(0, 0, 0, 0.1)'
+                  e.currentTarget.style.transform = 'translateY(-6px) scale(1.01)'
+                  e.currentTarget.style.boxShadow = '0 12px 32px rgba(6, 182, 212, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08)'
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0) scale(1)'
-                  e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(6, 182, 212, 0.08)'
+                  e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(6, 182, 212, 0.06)'
                 }}
               >
                 <h3 style={{
