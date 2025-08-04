@@ -1,4 +1,4 @@
-# Raghunath Reddy - Personal Portfolio & Blog
+# Personal Portfolio & Blog
 
 A modern personal portfolio and blog built with Gatsby and deployed automatically to GitHub Pages.
 
