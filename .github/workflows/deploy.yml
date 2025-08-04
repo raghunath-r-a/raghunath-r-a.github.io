@@ -3,7 +3,7 @@ name: Deploy Gatsby to GitHub Pages
 on:
   push:
     branches:
-      - feature/local-improvements
+      - main
   workflow_dispatch:
 
 permissions:
