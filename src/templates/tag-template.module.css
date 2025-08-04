@@ -1,0 +1,71 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 6rem 2rem 4rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-4xl));
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+  line-height: var(--line-height-tight);
+}
+
+.postCount {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  font-family: var(--font-sans);
+}
+
+.postList {
+  list-style: none;
+  padding: 0;
+}
+
+.postItem {
+  background: var(--color-bg-card);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(6, 182, 212, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.postItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+}
+
+.postLink {
+  text-decoration: none;
+}
+
+.postTitle {
+  font-size: var(--font-size-2xl);
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.postDate {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-family: var(--font-sans);
+  margin-bottom: 1rem;
+}
+
+.postExcerpt {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  line-height: var(--line-height-normal);
+}

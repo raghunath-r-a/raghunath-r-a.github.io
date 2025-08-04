@@ -1,90 +1,35 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
+import * as styles from "./blog-post.module.css"
 
 const BlogPostTemplate = ({ data }) => {
   const post = data.markdownRemark
 
-  const containerStyle = {
-    maxWidth: '800px',
-    margin: '0 auto',
-    padding: '6rem 2rem 4rem'
-  }
-
-  const articleStyle = {
-    background: 'var(--color-bg-card)',
-    borderRadius: '20px',
-    padding: '3rem',
-    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
-    border: '1px solid rgba(6, 182, 212, 0.2)'
-  }
-
-  const headerStyle = {
-    marginBottom: '3rem',
-    textAlign: 'center',
-    paddingBottom: '2rem',
-    borderBottom: '1px solid rgba(6, 182, 212, 0.3)'
-  }
-
-  const titleStyle = {
-    fontSize: 'clamp(var(--font-size-3xl), 5vw, var(--font-size-4xl))',
-    fontFamily: 'var(--font-serif)',
-    fontWeight: '600',
-    color: 'var(--color-text-primary)',
-    marginBottom: '1.5rem',
-    lineHeight: 'var(--line-height-tight)'
-  }
-
-  const metaStyle = {
-    fontSize: 'var(--font-size-base)',
-    color: 'var(--color-accent)',
-    fontFamily: 'var(--font-sans)',
-    fontWeight: '500',
-    marginBottom: '1rem'
-  }
-
-  const contentStyle = {
-    fontSize: 'var(--font-size-lg)',
-    lineHeight: 'var(--line-height-loose)',
-    color: 'var(--color-text-secondary)',
-    fontFamily: 'var(--font-sans)'
-  }
-
   return (
     <Layout>
-      <div style={containerStyle}>
-        <article style={articleStyle} className="mobile-reduced-padding">
-          <header style={headerStyle}>
-            <h1 style={titleStyle}>{post.frontmatter.title}</h1>
-            <p style={metaStyle}>
+      <div className={styles.container}>
+        <article className={`${styles.article} mobile-reduced-padding`}>
+          <header className={styles.header}>
+            <h1 className={styles.title}>{post.frontmatter.title}</h1>
+            <p className={styles.meta}>
               By {post.frontmatter.author} on {post.frontmatter.date}
             </p>
             {post.frontmatter.tags && (
-              <div style={{ marginTop: '1rem' }}>
+              <div className={styles.tagsContainer}>
                 {post.frontmatter.tags.map((tag, index) => (
-                  <span 
+                  <Link 
+                    to={`/tags/${tag.toLowerCase().replace(/\s/g, '-')}/`} 
                     key={tag} 
-                    style={{
-                      display: 'inline-block',
-                      background: 'rgba(6, 182, 212, 0.15)',
-                      color: 'var(--color-accent)',
-                      padding: '0.3rem 0.8rem',
-                      borderRadius: '15px',
-                      fontSize: 'var(--font-size-xs)',
-                      fontFamily: 'var(--font-sans)',
-                      fontWeight: '500',
-                      marginRight: '0.5rem',
-                      marginBottom: '0.5rem',
-                      border: '1px solid rgba(6, 182, 212, 0.3)'
-                    }}
+                    className={styles.tag}
                   >
                     #{tag}
-                  </span>
+                  </Link>
                 ))}
               </div>
             )}
           </header>
-          <div style={contentStyle} dangerouslySetInnerHTML={{ __html: post.html }} />
+          <div className={styles.content} dangerouslySetInnerHTML={{ __html: post.html }} />
         </article>
       </div>
     </Layout>

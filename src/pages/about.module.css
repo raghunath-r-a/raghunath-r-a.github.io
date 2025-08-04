@@ -1,0 +1,178 @@
+.hero {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+  padding: 8rem 0 6rem;
+  text-align: center;
+  color: var(--color-text-primary);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 5vw, 3rem);
+}
+
+.title {
+  font-size: clamp(var(--font-size-4xl), 6vw, var(--font-size-5xl));
+  font-family: var(--font-sans);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: clamp(var(--font-size-lg), 3vw, var(--font-size-xl));
+  opacity: 0.95;
+  font-weight: 400;
+  font-family: var(--font-sans);
+  line-height: var(--line-height-relaxed);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: clamp(2rem, 4vw, 3rem) 0;
+  background: var(--color-bg-primary);
+}
+
+.contentGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.textContent {
+  font-size: clamp(var(--font-size-base), 2.5vw, var(--font-size-xl));
+  line-height: var(--line-height-loose);
+  color: var(--color-text-secondary);
+  font-family: var(--font-sans);
+  max-width: none;
+}
+
+.highlight {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.skillCard {
+  background: var(--color-bg-card);
+  border-radius: 12px;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1 1 calc(50% - 0.75rem);
+  min-width: 280px;
+  max-width: 450px;
+}
+
+.skillCard:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 32px rgba(6, 182, 212, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.skillIcon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0f172a;
+  font-family: var(--font-sans);
+}
+
+.sectionTitle {
+  font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-4xl));
+  font-family: var(--font-sans);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--color-accent);
+}
+
+.connectCard {
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.8));
+  border-radius: 20px 28px 24px 18px;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  color: var(--color-text-primary);
+  text-align: center;
+  border: none;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.08);
+  flex: 1 1 300px;
+  min-width: 280px;
+}
+
+.connectTitle {
+  font-size: var(--font-size-2xl);
+  margin-bottom: 1.5rem;
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+
+.connectText {
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  font-family: var(--font-sans);
+}
+
+.connectLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.emailButton {
+  padding: 1rem 2rem;
+  background: rgba(6, 182, 212, 0.15);
+  border: 2px solid var(--color-accent);
+  border-radius: 25px;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  font-family: var(--font-sans);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.emailButton:hover {
+  background: rgba(6, 182, 212, 0.25);
+}
+
+.skillTitle {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+  font-family: var(--font-serif);
+}
+
+.skillDescription {
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-base);
+  font-family: var(--font-sans);
+}
