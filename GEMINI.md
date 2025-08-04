@@ -60,3 +60,9 @@ The following Gatsby plugins are used in this project:
   - Ensured the copyright logo section in the footer is properly center-aligned.
   - Corrected missing spaces and text duplication in the "My Story" section of `src/pages/about.js`.
   - Corrected the title of the last skill in the "What I Do Best" section of `src/pages/about.js`.
+
+### Current Status
+
+All local changes have been committed to a new branch named `feature/local-improvements` and pushed to the remote repository. You can now create a pull request from this branch to merge the changes into your main branch.
+
+GitHub Actions deployment workflow (`.github/workflows/deploy.yml`) has been updated to trigger on pushes to the `feature/local-improvements` branch.
